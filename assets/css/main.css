@@ -2577,20 +2577,6 @@
 		width: calc(100% - 35%);
 	}
 
-	#main-blog {
-		margin-left: 35%;
-		padding: 8em 4em 4em 4em;
-		margin-top: -61px;
-		width: calc(100% - 35%);
-	}
-	.blog-header{
-		margin-top: 20px;
-		font-size: 1.4rem;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
-    color: #93a4aa;
-	}
-
 		#main > section {
 			border-top: solid 2px #efefef;
 			margin: 4em 0 0 0;
@@ -3145,4 +3131,16 @@
 .grow:hover { transform: scale(1.1); }
 .row-handler{
 	margin-top: 50px;
+}
+
+.tag-label{
+	background: #21AD7A;
+	color: #FFFFFF;
+	border-radius: 6px;
+	font-weight: bold;
+	padding: 5px;
+	font-size: 12px;
+}
+.margin-top-5 {
+	margin-top: 5px;
 }
