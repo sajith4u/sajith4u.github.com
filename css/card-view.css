@@ -116,7 +116,7 @@ margin: auto
     }
 
     .card-view {
-    width: 850px;
+    width: 300px;
     position: relative;
     display: flex;
     justify-content: space-between;
