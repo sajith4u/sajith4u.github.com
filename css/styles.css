@@ -10247,6 +10247,18 @@ body{
     background-size: 80px;
 }
 
+.typeLabel{
+  border-radius: 15px;
+border: 2px solid #BD5D38;
+background: #BD5D38;
+width: 73px;
+padding-left: 10px;
+padding-right: 10px;
+font-size: 14px;
+text-align: center;
+color: white;
+}
+
 @media(max-width: 990px){
   .card{
     margin: 20px;
