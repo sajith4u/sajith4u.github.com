@@ -146,6 +146,7 @@ margin: auto
 .card-view .card:hover .face.face1{
     background: #ff0057;
     transform: translateY(0px);
+    text-decoration: none;
 }
 
 .card-view .card .face.face1 .content {
@@ -155,6 +156,7 @@ margin: auto
 
 .card-view .card:hover .face.face1 .content {
     opacity: 1;
+    text-decoration: none;
 }
 
 .card-view .card .face.face1 .content i{
