@@ -95,11 +95,21 @@ margin: auto
     height: 120px;
 }
 
+.card-padding{
+    margin-right: auto;
+    padding-left: 60px;
+}
+
 @media screen and (max-device-width: 480px) {
   .card-view .card .face {
     width: 200px;
     height: 180px;
     transition: 0.5s;
+  }
+
+  .card-padding{
+    margin-right: auto;
+    padding-left: 0px;
   }
 
   .card-image{
