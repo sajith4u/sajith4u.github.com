@@ -158,6 +158,7 @@ sup {
   top: -0.5em;
 }
 
+
 a {
   color: #bd5d38;
   text-decoration: none;
@@ -501,6 +502,11 @@ mark,
 .figure-caption {
   font-size: 90%;
   color: #6c757d;
+}
+
+.type-label{
+  color: #6c757d;
+  font-style: italic;
 }
 
 code {
