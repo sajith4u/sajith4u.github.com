@@ -10210,6 +10210,25 @@ body{
   height: 350px
 }
 
+.cardv2{
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+      transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+  padding: 14px 80px 18px 36px;
+  cursor: pointer;
+  margin-top: 20px;
+  height: 400px
+}
+.cardv2:hover{
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+.cardv2 h3{
+  font-weight: 600;
+}
+
 .cardv1:hover{
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
@@ -10253,10 +10272,29 @@ body{
     background-size: 80px;
 }
 
+.card-empty{
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 80px;
+}
+
 .typeLabel{
-  border-radius: 15px;
+  border-radius: 10px;
 border: 2px solid #BD5D38;
 background: #BD5D38;
+width: 73px;
+padding-left: 10px;
+padding-right: 10px;
+font-size: 14px;
+text-align: center;
+color: white;
+margin-top: 5px;
+}
+
+.workLabel{
+border-radius: 3px;
+border: 2px solid #495057;
+background: #495057;
 width: 73px;
 padding-left: 10px;
 padding-right: 10px;
