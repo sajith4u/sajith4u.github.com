@@ -86,12 +86,31 @@
 
 
 @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-devicepixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx) {
-  
-  .phone {
+ 
+ .screen {
+  background-color: #000;
+  position: absolute;
+  width: 335px;
+  height: 594px;
+  top: 82px;
+  left: 20px;
+  overflow: hidden;
+}
+
+.screenshot {
+  display: inline-block;
+  position: relative;
+  width: 335px;
+  height: 594px;
+  -webkit-border-radius: 1px;
+  border-radius: 1px;
+}
+
+.phone {
     background-image: url('https://www.dropbox.com/s/t217jq0k4fufpyk/1%402x.png?dl=0&raw=1');
-  }
+}
   
- .pass1 {
+.pass1 {
   background-image: url('../assets/img/movie-tickets/001.jpg');
 }
 
