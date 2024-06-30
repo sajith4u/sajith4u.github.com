@@ -1,0 +1,136 @@
+.phone {
+  width: 400px;
+  height: 812px;
+  overflow: hidden;
+  position: relative;
+  background-image: url('https://www.dropbox.com/s/a8u5x8ji32xicwj/1.png?dl=0&raw=1');
+  transform: scale(0.75);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.screen {
+  background-color: #000;
+  position: absolute;
+  width: 357px;
+  height: 635px;
+  top: 89px;
+  left: 21px;
+  overflow: hidden;
+}
+
+.reel {
+  position: relative;
+  width: calc(200% + 10px);
+  height: 100%;
+  will-change: transform;
+}
+
+.screenshot {
+  display: inline-block;
+  position: relative;
+  width: 358px;
+  height: 657px;
+  -webkit-border-radius: 1px;
+  border-radius: 1px;
+}
+
+.pass1 {
+  background-image: url('../assets/img/movie-tickets/001.jpg');
+}
+
+.pass2 {
+  background-image: url('../assets/img/movie-tickets/002.jpg');
+}
+
+.pass3 {
+  background-image: url('../assets/img/movie-tickets/003.jpg');
+}
+
+.pass4 {
+  background-image: url('../assets/img/movie-tickets/004.jpg');
+}
+
+.pass5 {
+  background-image: url('../assets/img/movie-tickets/005.jpg');
+}
+
+.pass6 {
+  background-image: url('../assets/img/movie-tickets/006.jpg');
+}
+
+.pass7 {
+  background-image: url('../assets/img/movie-tickets/007.jpg');
+}
+
+.pass8 {
+  background-image: url('../assets/img/movie-tickets/008.jpg');
+}
+
+.pass9 {
+  background-image: url('../assets/img/movie-tickets/009.jpg');
+}
+
+.pass10 {
+  background-image: url('../assets/img/movie-tickets/010.jpg');
+}
+
+
+
+
+
+.pass1, .pass2, .pass3, .pass4,.pass5, .pass6 , .pass7, .pass8,.pass9, .pass10  {
+  background-size: 100%;
+}
+
+
+
+@media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-devicepixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx) {
+  
+  .phone {
+    background-image: url('https://www.dropbox.com/s/t217jq0k4fufpyk/1%402x.png?dl=0&raw=1');
+  }
+  
+ .pass1 {
+  background-image: url('../assets/img/movie-tickets/001.jpg');
+}
+
+.pass2 {
+  background-image: url('../assets/img/movie-tickets/002.jpg');
+}
+
+.pass3 {
+  background-image: url('../assets/img/movie-tickets/003.jpg');
+}
+
+.pass4 {
+  background-image: url('../assets/img/movie-tickets/004.jpg');
+}
+
+.pass5 {
+  background-image: url('../assets/img/movie-tickets/005.jpg');
+}
+
+.pass6 {
+  background-image: url('../assets/img/movie-tickets/006.jpg');
+}
+
+.pass7 {
+  background-image: url('../assets/img/movie-tickets/007.jpg');
+}
+
+.pass8 {
+  background-image: url('../assets/img/movie-tickets/008.jpg');
+}
+
+.pass9 {
+  background-image: url('../assets/img/movie-tickets/009.jpg');
+}
+
+.pass10 {
+  background-image: url('../assets/img/movie-tickets/010.jpg');
+}
+
+
+  
+}
