@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Sajith Vijesekara Personal Website, Expert in Java,AWS,Spring & Flutter Development. Mobile Freelance Developer(Android/Ios)" />
+         <meta name="keywords" content="android, ios, mobile developer, freelancer, srilanka , flutter , native, spring, aws , freelancer , freelancer for app development, freelance mobile app developer, freelance android app developer , offshore app development, offshore mobile app development , creating my own app, making my own app,  find app developer for startup, startup app development company, machine learning in finance, mobile software development services, playstore , ios " />
+        <meta name="author" content="sajith vijesekara" />
+        <title>Sajith Vijesekara - Mobile App Movie Ticket Booking </title>
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+         <link href="css/card-view.css" rel="stylesheet" />
+        <link href="css/device-slider.css" rel="stylesheet" />
+
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7C6YECVJHJ"></script>
+
+ <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://rawgit.com/rstacruz/jquery.transit/master/jquery.transit.js"></script> 
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7C6YECVJHJ');
+</script>
+
+<script>
+       $(function() {
+
+  var passes = ['pass1', 'pass2', 'pass3', 'pass4', 'pass5', 'pass6', 'pass7', 'pass8', 'pass9' , 'pass10'];
+  var index = 0;
+  var reel = $('#reel');
+
+  var incrementIndex = function() {
+    index++, index > passes.length - 1 && (index = 0);
+  }
+
+  var createSlide = function(index) {
+    var $div = $("<div>", {
+      class: "screenshot " + passes[index]
+    });
+
+    reel.append($div);
+  };
+
+  var transitionSlides = function(duration, delay) {
+    var a = $(".screenshot");
+    $("#reel").transition({
+      translate: [-287],
+      duration: duration,
+      delay: delay,
+      easing: "easeInOutCubic",
+      complete: function() {
+        $("#reel").transition({
+          translate: [0],
+          duration: 0,
+          complete: function() {
+            $('.screenshot').first().remove();
+            initiateSlides(500, 2000);
+          }
+        });
+      }
+    });
+  }
+
+  var initiateSlides = function(duration, delay) {
+    incrementIndex();
+    createSlide(index);
+    transitionSlides(duration, delay);
+  }
+
+  createSlide(index);
+  initiateSlides(500, 2000);
+
+});
+    </script>
+
+
+    </head>
+      <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">
+                <span class="d-block d-lg-none">Sajith Vijesekara</span>
+                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/profile5.jpg" alt="sajith vijesekara" /></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://www.sajithv.com#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://www.sajithv.com#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://www.sajithv.com#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://www.sajithv.com#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://www.sajithv.com#interests">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://www.sajithv.com#awards">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://www.sajithv.com#honors">certifications</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container-fluid p-0">
+            <section class="mobile-details" id="about">
+               <div class="phone">
+              <div class="screen">
+                <div class="reel" id="reel"></div>
+              </div>
+            </div>
+            </section>
+        </div>
+
+        
+
+
+       
+
+    </body>
+</html>
