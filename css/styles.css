@@ -10298,6 +10298,20 @@ color: white;
 margin-top: 5px;
 }
 
+.expLabel{
+  border-radius: 10px;
+border: 2px solid #BD5D38;
+background: white;
+width: 73px;
+padding-left: 10px;
+padding-right: 10px;
+font-size: 14px;
+text-align: center;
+color: #BD5D38;
+margin-top: 5px;
+}
+
+
 .workLabel{
 border-radius: 3px;
 border: 2px solid #495057;
