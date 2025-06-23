@@ -11076,6 +11076,12 @@ section.resume-section .resume-section-content {
   section.resume-section {
     min-height: 100vh;
   }
+
+  .tech-icon {
+    width: 32px;
+    height: 32px;
+    filter: sepia(100%) saturate(700%) hue-rotate(340deg);
+  }
 }
 
 @media (min-width: 992px) {
@@ -11346,3 +11352,10 @@ body {
   max-width: 100%;
   vertical-align: middle;
 }
+
+.tech-icon {
+  width: 36px;
+  height: 36px;
+  filter: sepia(100%) saturate(700%) hue-rotate(340deg);
+}
+
