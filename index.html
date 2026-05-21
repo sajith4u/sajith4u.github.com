@@ -16,6 +16,169 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <link href="css/card-view.css" rel="stylesheet" />
+        <style>
+            /* Project modal */
+            .project-card-link { cursor: pointer; }
+            #projectModal .modal-content { border-radius: 14px; border: none; }
+            #projectModal .modal-header {
+                border-bottom: none;
+                padding: 1.5rem 1.75rem 0.5rem;
+                align-items: flex-start;
+            }
+            #projectModal .modal-title {
+                font-size: 1.35rem;
+                font-weight: 700;
+                line-height: 1.3;
+                max-width: 70%;
+            }
+            #projectModal .modal-header-actions { display: flex; align-items: center; gap: 0.6rem; }
+            #projectModal .btn-copy-link {
+                color: #28a745;
+                border: 1.5px solid #28a745;
+                border-radius: 6px;
+                font-size: 0.8rem;
+                padding: 4px 12px;
+                background: transparent;
+                white-space: nowrap;
+            }
+            #projectModal .btn-copy-link:hover { background: #28a7451a; }
+            #projectModal .modal-body { padding: 0.75rem 1.75rem 1.75rem; }
+            .modal-meta-label { font-size: 0.82rem; color: #888; font-weight: 500; margin-bottom: 0.15rem; }
+            .modal-role-text { font-size: 0.95rem; margin-bottom: 1rem; }
+            .modal-description-text { font-size: 0.9rem; color: #444; line-height: 1.6; margin-bottom: 1rem; }
+            .modal-skill-chip {
+                display: inline-block;
+                background: #f0f0f0;
+                border-radius: 20px;
+                padding: 3px 14px;
+                margin: 3px 3px 3px 0;
+                font-size: 0.78rem;
+                font-weight: 500;
+                color: #333;
+            }
+            #modalSkills { margin-bottom: 1rem; }
+            .modal-date-text { font-size: 0.82rem; color: #888; margin-bottom: 0.5rem; }
+            .modal-contact-btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                background: #BD5D38;
+                color: #fff !important;
+                border-radius: 8px;
+                padding: 9px 18px;
+                font-size: 0.85rem;
+                font-weight: 600;
+                text-decoration: none !important;
+                transition: background 0.18s;
+                width: 100%;
+                justify-content: center;
+            }
+            .modal-contact-btn:hover { background: #a34d2e; }
+            .modal-url-box {
+                background: #f6fdf8;
+                border: 1.5px solid #d4edda;
+                border-radius: 10px;
+                padding: 14px 18px;
+                margin-bottom: 1.25rem;
+            }
+            .modal-url-box a {
+                color: #28a745;
+                font-size: 0.95rem;
+                font-weight: 500;
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                word-break: break-all;
+            }
+            .modal-url-box a:hover { text-decoration: underline; }
+            /* Browser-chrome frame wrapping the screenshot or placeholder */
+            .browser-frame {
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 6px 28px rgba(0,0,0,0.13);
+                border: 1px solid #e0e0e0;
+            }
+            .browser-chrome {
+                background: #f2f2f2;
+                padding: 9px 14px;
+                display: flex;
+                align-items: center;
+                border-bottom: 1px solid #e0e0e0;
+            }
+            .b-dot {
+                width: 11px;
+                height: 11px;
+                border-radius: 50%;
+                display: inline-block;
+                margin-right: 5px;
+            }
+            .b-dot.r { background: #ff5f56; }
+            .b-dot.y { background: #ffbd2e; }
+            .b-dot.g { background: #27c93f; }
+            .browser-address-bar {
+                flex: 1;
+                background: #fff;
+                border-radius: 20px;
+                padding: 3px 16px;
+                font-size: 0.72rem;
+                color: #777;
+                margin-left: 10px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            .browser-body {
+                background: #fff;
+                max-height: 340px;
+                overflow: hidden;
+            }
+            /* Actual screenshot */
+            .modal-project-screenshot {
+                width: 100%;
+                display: block;
+            }
+            /* Placeholder SVG container */
+            .modal-screenshot-placeholder {
+                position: relative;
+                line-height: 0;
+            }
+            .modal-screenshot-placeholder svg { width: 100%; display: block; }
+            .screenshot-hint {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                padding: 18px 0 12px;
+                text-align: center;
+                font-size: 0.78rem;
+                color: #bbb;
+                background: linear-gradient(to bottom, transparent, #fff 60%);
+                pointer-events: none;
+            }
+            /* Image size guide shown below frame */
+            .modal-img-guide {
+                font-size: 0.7rem;
+                color: #ccc;
+                margin-top: 6px;
+                text-align: right;
+                margin-bottom: 0;
+            }
+            /* copy-link toast */
+            #copyToast {
+                position: fixed;
+                bottom: 2rem;
+                left: 50%;
+                transform: translateX(-50%);
+                background: #333;
+                color: #fff;
+                padding: 8px 22px;
+                border-radius: 20px;
+                font-size: 0.85rem;
+                display: none;
+                z-index: 9999;
+            }
+        </style>
 
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,900" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -155,7 +318,7 @@ I bring a strong understanding of <b>software engineering best practices </b>, <
                                  <h5 class="expLabel" style=" display: inline-block; margin-left: 3px;">AWS</h5>
                             </div>
                         </div>
-                        <div class="flex-shrink-0"><span class="text-primary">Jul 2022 - Present</span></div>
+                        <div class="flex-shrink-0"><span class="text-primary">Jul 2022 - Mar 2024</span></div>
                     </div>
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
@@ -354,7 +517,7 @@ restaurant ordering system.</p>
                       
                        
                         <div class="col-md-3">
-                          <a href="https://www.simplehr.io/" target="_blank" style="text-decoration: none; color: inherit;">
+                          <a href="https://www.simplehr.io/" class="project-card-link" data-project="simplehr" style="text-decoration: none; color: inherit;">
                           <div class="cardv2 card-empty">
                             
                             <span><h3>SimpleHR.io</h3>  <img src="assets/img/saas.png" style="height: 35px" class="mobile"/> </span>
@@ -425,7 +588,7 @@ restaurant ordering system.</p>
 
                         <div class="col-md-3">
                           
-                          <a href="https://univox.io" target="_blank" style="text-decoration: none; color: inherit;">
+                          <a href="https://univox.io" class="project-card-link" data-project="univox" style="text-decoration: none; color: inherit;">
                           <div class="cardv2 card-empty">
                             
                            <span><h3>Univox.io</h3>  <img src="assets/img/saas.png" style="height: 35px" class="mobile"/> </span>
@@ -447,7 +610,7 @@ restaurant ordering system.</p>
 
                         <div class="col-md-3">
                             
-                         <a href="https://www.sajithv.com/movie-tickets.html" target="_blank" style="text-decoration: none; color: inherit;">
+                         <a href="https://www.sajithv.com/movie-tickets.html" class="project-card-link" data-project="moviebooking" style="text-decoration: none; color: inherit;">
 
                             <div class="cardv2 card-empty">
                             
@@ -472,7 +635,7 @@ restaurant ordering system.</p>
 
                         <div class="col-md-3">
                           
-                          <a href="https://www.linkedin.com/company/onehirelk" target="_blank" style="text-decoration: none; color: inherit;">
+                          <a href="https://www.linkedin.com/company/onehirelk" class="project-card-link" data-project="onehire" style="text-decoration: none; color: inherit;">
                           <div class="cardv2 card-empty">
                             
                            <span><h3>OneHire.lk</h3>  <img src="assets/img/saas.png" style="height: 35px" class="mobile"/> </span>
@@ -494,7 +657,7 @@ restaurant ordering system.</p>
 
                          <div class="col-md-3">
                           
-                          <a href="https://ftracker-seven.vercel.app" target="_blank" style="text-decoration: none; color: inherit;">
+                          <a href="https://ftracker-seven.vercel.app" class="project-card-link" data-project="ftracker" style="text-decoration: none; color: inherit;">
                           <div class="cardv2 card-empty">
                             
                            <span><h3>FTracker</h3>  <img src="assets/img/saas.png" style="height: 35px" class="mobile"/> </span>
@@ -726,6 +889,191 @@ restaurant ordering system.</p>
               
             </section>
         </div>
+        <!-- Project Detail Modal -->
+        <div class="modal fade" id="projectModal" tabindex="-1" role="dialog" aria-labelledby="projectModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="projectModalLabel"></h5>
+                        <div class="modal-header-actions">
+                            <button class="btn-copy-link" id="modalCopyLink">
+                                <i class="fas fa-link"></i> Copy link
+                            </button>
+                            <button type="button" class="close ml-2" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <p class="modal-meta-label">My role.</p>
+                                <p class="modal-role-text" id="modalRole"></p>
+                                <p class="modal-meta-label">Project description.</p>
+                                <p class="modal-description-text" id="modalDescription"></p>
+                                <p class="modal-meta-label">Skills and deliverables</p>
+                                <div id="modalSkills"></div>
+                                <p class="modal-date-text mt-2" id="modalDate"></p>
+                                <hr style="border-color:#eee;" />
+                                <a href="https://calendly.com/sajith-vijesekara/end-to-end-product-design-development-consultation" target="_blank" rel="noopener" class="modal-contact-btn">
+                                    <i class="fas fa-calendar-alt"></i> Let's Build Something Together
+                                </a>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="modal-url-box">
+                                    <a id="modalVisitLink" href="#" target="_blank" rel="noopener">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        <span id="modalUrlText"></span>
+                                    </a>
+                                </div>
+                                <!-- Browser-chrome frame -->
+                                <div class="browser-frame">
+                                    <div class="browser-chrome">
+                                        <span class="b-dot r"></span>
+                                        <span class="b-dot y"></span>
+                                        <span class="b-dot g"></span>
+                                        <div class="browser-address-bar" id="modalAddressBar"></div>
+                                    </div>
+                                    <div class="browser-body">
+                                        <!-- Screenshot (shown when image is set) -->
+                                        <img id="modalProjectImage" src="" alt="Project screenshot" class="modal-project-screenshot" style="display:none;">
+                                        <!-- SVG graphic placeholder (shown when no image) -->
+                                        <div id="modalPlaceholder" class="modal-screenshot-placeholder">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300">
+                                                <rect width="480" height="300" fill="#fafafa"/>
+                                                <!-- Sidebar -->
+                                                <rect x="0" y="0" width="88" height="300" fill="#f3f3f3"/>
+                                                <rect x="14" y="20" width="52" height="8" rx="4" fill="#BD5D38" fill-opacity="0.6"/>
+                                                <rect x="14" y="40" width="60" height="5" rx="2" fill="#ddd"/>
+                                                <rect x="14" y="54" width="55" height="5" rx="2" fill="#ddd"/>
+                                                <rect x="14" y="68" width="62" height="5" rx="2" fill="#ddd"/>
+                                                <rect x="14" y="82" width="48" height="5" rx="2" fill="#ddd"/>
+                                                <rect x="14" y="96" width="58" height="5" rx="2" fill="#ddd"/>
+                                                <rect x="14" y="110" width="52" height="5" rx="2" fill="#ddd"/>
+                                                <rect x="14" y="124" width="60" height="5" rx="2" fill="#ddd"/>
+                                                <!-- Top stat cards -->
+                                                <rect x="102" y="14" width="106" height="60" rx="6" fill="#fff" stroke="#eaeaea" stroke-width="1"/>
+                                                <rect x="115" y="26" width="54" height="5" rx="2" fill="#e0e0e0"/>
+                                                <rect x="115" y="38" width="36" height="12" rx="3" fill="#BD5D38" fill-opacity="0.25"/>
+                                                <rect x="220" y="14" width="106" height="60" rx="6" fill="#fff" stroke="#eaeaea" stroke-width="1"/>
+                                                <rect x="233" y="26" width="48" height="5" rx="2" fill="#e0e0e0"/>
+                                                <rect x="233" y="38" width="36" height="12" rx="3" fill="#BD5D38" fill-opacity="0.18"/>
+                                                <rect x="338" y="14" width="130" height="60" rx="6" fill="#fff" stroke="#eaeaea" stroke-width="1"/>
+                                                <rect x="351" y="26" width="60" height="5" rx="2" fill="#e0e0e0"/>
+                                                <rect x="351" y="38" width="36" height="12" rx="3" fill="#BD5D38" fill-opacity="0.12"/>
+                                                <!-- List rows -->
+                                                <rect x="102" y="88" width="366" height="1" fill="#ececec"/>
+                                                <rect x="102" y="97" width="180" height="5" rx="2" fill="#e8e8e8"/>
+                                                <rect x="390" y="93" width="56" height="12" rx="6" fill="#BD5D38" fill-opacity="0.45"/>
+                                                <rect x="102" y="115" width="366" height="1" fill="#ececec"/>
+                                                <rect x="102" y="124" width="150" height="5" rx="2" fill="#e8e8e8"/>
+                                                <rect x="390" y="120" width="56" height="12" rx="6" fill="#BD5D38" fill-opacity="0.3"/>
+                                                <rect x="102" y="142" width="366" height="1" fill="#ececec"/>
+                                                <rect x="102" y="151" width="170" height="5" rx="2" fill="#e8e8e8"/>
+                                                <rect x="390" y="147" width="56" height="12" rx="6" fill="#BD5D38" fill-opacity="0.2"/>
+                                                <rect x="102" y="169" width="366" height="1" fill="#ececec"/>
+                                                <rect x="102" y="178" width="140" height="5" rx="2" fill="#e8e8e8"/>
+                                                <rect x="390" y="174" width="56" height="12" rx="6" fill="#BD5D38" fill-opacity="0.14"/>
+                                                <!-- Fade out at bottom -->
+                                                <defs>
+                                                    <linearGradient id="pFade" x1="0" y1="0" x2="0" y2="1">
+                                                        <stop offset="0%" stop-color="#fafafa" stop-opacity="0"/>
+                                                        <stop offset="100%" stop-color="#fafafa" stop-opacity="1"/>
+                                                    </linearGradient>
+                                                </defs>
+                                                <rect x="0" y="210" width="480" height="90" fill="url(#pFade)"/>
+                                            </svg>
+                                            <div class="screenshot-hint">Add a screenshot to preview this project</div>
+                                        </div>
+                                        <!-- Mobile app placeholder (shown for mobile projects) -->
+                                        <div id="modalPlaceholderMobile" class="modal-screenshot-placeholder" style="display:none;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300">
+                                                <defs>
+                                                    <linearGradient id="mobileBanner" x1="0" y1="0" x2="1" y2="0">
+                                                        <stop offset="0%" stop-color="#BD5D38" stop-opacity="0.85"/>
+                                                        <stop offset="100%" stop-color="#2c1a10" stop-opacity="0.95"/>
+                                                    </linearGradient>
+                                                    <linearGradient id="mobileFade" x1="0" y1="0" x2="0" y2="1">
+                                                        <stop offset="0%" stop-color="#f5f5f5" stop-opacity="0"/>
+                                                        <stop offset="100%" stop-color="#f5f5f5" stop-opacity="1"/>
+                                                    </linearGradient>
+                                                </defs>
+                                                <!-- Background -->
+                                                <rect width="480" height="300" fill="#f5f5f5"/>
+                                                <!-- Subtle background circles -->
+                                                <circle cx="72" cy="72" r="58" fill="#BD5D38" fill-opacity="0.06"/>
+                                                <circle cx="408" cy="228" r="72" fill="#BD5D38" fill-opacity="0.05"/>
+                                                <circle cx="420" cy="52" r="32" fill="#BD5D38" fill-opacity="0.04"/>
+                                                <!-- Phone drop shadow -->
+                                                <rect x="183" y="36" width="126" height="246" rx="22" fill="#000" fill-opacity="0.08"/>
+                                                <!-- Phone outer body (dark) -->
+                                                <rect x="179" y="30" width="126" height="244" rx="20" fill="#1c1c1e"/>
+                                                <!-- Screen area -->
+                                                <rect x="185" y="48" width="114" height="216" rx="6" fill="#fff"/>
+                                                <!-- Dynamic island pill -->
+                                                <rect x="218" y="33" width="48" height="10" rx="5" fill="#0d0d0d"/>
+                                                <!-- Status bar -->
+                                                <rect x="185" y="48" width="114" height="14" fill="#BD5D38"/>
+                                                <rect x="191" y="52" width="18" height="4" rx="2" fill="rgba(255,255,255,0.45)"/>
+                                                <rect x="272" y="52" width="10" height="4" rx="2" fill="rgba(255,255,255,0.35)"/>
+                                                <rect x="285" y="52" width="10" height="4" rx="2" fill="rgba(255,255,255,0.35)"/>
+                                                <!-- App header -->
+                                                <rect x="185" y="62" width="114" height="28" fill="#BD5D38"/>
+                                                <rect x="193" y="70" width="52" height="6" rx="3" fill="rgba(255,255,255,0.75)"/>
+                                                <!-- Search icon -->
+                                                <circle cx="283" cy="72" r="5" fill="none" stroke="rgba(255,255,255,0.65)" stroke-width="1.5"/>
+                                                <line x1="287" y1="76" x2="290" y2="79" stroke="rgba(255,255,255,0.65)" stroke-width="1.5"/>
+                                                <!-- Featured banner -->
+                                                <rect x="185" y="90" width="114" height="62" fill="url(#mobileBanner)"/>
+                                                <rect x="193" y="100" width="62" height="7" rx="3" fill="rgba(255,255,255,0.88)"/>
+                                                <rect x="193" y="113" width="44" height="5" rx="2" fill="rgba(255,255,255,0.55)"/>
+                                                <rect x="193" y="124" width="36" height="18" rx="9" fill="#BD5D38"/>
+                                                <rect x="196" y="129" width="30" height="5" rx="2" fill="rgba(255,255,255,0.85)"/>
+                                                <!-- Section label -->
+                                                <rect x="193" y="159" width="38" height="5" rx="2" fill="#ccc"/>
+                                                <!-- Movie row 1 -->
+                                                <rect x="193" y="172" width="26" height="36" rx="3" fill="#BD5D38" fill-opacity="0.35"/>
+                                                <rect x="224" y="176" width="56" height="5" rx="2" fill="#ddd"/>
+                                                <rect x="224" y="186" width="40" height="4" rx="2" fill="#eaeaea"/>
+                                                <rect x="224" y="196" width="34" height="4" rx="2" fill="#BD5D38" fill-opacity="0.4"/>
+                                                <!-- Movie row 2 -->
+                                                <rect x="193" y="215" width="26" height="32" rx="3" fill="#BD5D38" fill-opacity="0.18"/>
+                                                <rect x="224" y="219" width="48" height="5" rx="2" fill="#ddd"/>
+                                                <rect x="224" y="229" width="36" height="4" rx="2" fill="#eaeaea"/>
+                                                <rect x="224" y="239" width="34" height="4" rx="2" fill="#BD5D38" fill-opacity="0.28"/>
+                                                <!-- Bottom nav bar -->
+                                                <rect x="185" y="248" width="114" height="16" fill="#fafafa"/>
+                                                <rect x="193" y="252" width="16" height="8" rx="2" fill="#BD5D38" fill-opacity="0.65"/>
+                                                <rect x="220" y="252" width="16" height="8" rx="2" fill="#e8e8e8"/>
+                                                <rect x="247" y="252" width="16" height="8" rx="2" fill="#e8e8e8"/>
+                                                <rect x="274" y="252" width="16" height="8" rx="2" fill="#e8e8e8"/>
+                                                <!-- Home indicator -->
+                                                <rect x="223" y="268" width="38" height="3" rx="1.5" fill="#ccc"/>
+                                                <!-- Left decorative lines -->
+                                                <rect x="12" y="118" width="118" height="6" rx="3" fill="#ddd" fill-opacity="0.55"/>
+                                                <rect x="12" y="132" width="92" height="4" rx="2" fill="#ddd" fill-opacity="0.4"/>
+                                                <rect x="12" y="144" width="104" height="4" rx="2" fill="#ddd" fill-opacity="0.3"/>
+                                                <rect x="12" y="156" width="76" height="4" rx="2" fill="#ddd" fill-opacity="0.25"/>
+                                                <!-- Right decorative lines -->
+                                                <rect x="357" y="118" width="110" height="6" rx="3" fill="#ddd" fill-opacity="0.55"/>
+                                                <rect x="371" y="132" width="88" height="4" rx="2" fill="#ddd" fill-opacity="0.4"/>
+                                                <rect x="364" y="144" width="98" height="4" rx="2" fill="#ddd" fill-opacity="0.3"/>
+                                                <!-- Bottom fade -->
+                                                <rect x="0" y="248" width="480" height="52" fill="url(#mobileFade)"/>
+                                            </svg>
+                                            <div class="screenshot-hint">Add a screenshot to preview this project</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="modal-img-guide">Recommended screenshot size: 1280&times;800 px (desktop) &nbsp;|&nbsp; 390&times;844 px (mobile)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="copyToast">Link copied to clipboard!</div>
+
         <!-- Bootstrap core JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -733,5 +1081,111 @@ restaurant ordering system.</p>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <script>
+        (function ($) {
+            var projects = {
+                simplehr: {
+                    title: 'SimpleHR — AI-Powered HR Suite',
+                    role: 'Software Architect and Full-stack Developer',
+                    description: 'SimpleHR is a centralized workforce management platform that integrates Autonomous AI Agents to move HR from a reactive administrative role to a proactive strategic partner. Instead of just storing data, the platform uses intelligent agents to manage the full lifecycle of an employee.',
+                    skills: ['Spring Boot', 'React', 'AWS Fargate', 'PostgreSQL', 'LangChain'],
+                    url: 'https://www.simplehr.io/',
+                    year: '2024',
+                    image: 'assets/img/simplehr-preview-2.png'
+                },
+                univox: {
+                    title: 'Univox.io — AI Voice Automation',
+                    role: 'Software Architect and Full-stack Developer',
+                    description: 'Univox is a universal AI-powered platform that automates routine voice calls with customers using intelligent agents. It streamlines daily communication tasks, improving efficiency and freeing up human resources for higher-value work.',
+                    skills: ['Python', 'FastAPI', 'AI Agents', 'AWS', 'Kubernetes'],
+                    url: 'https://univox.io',
+                    year: '2024',
+                    image: ''
+                },
+                moviebooking: {
+                    title: 'Movie Ticket Booking App',
+                    role: 'Mobile Developer',
+                    description: 'A Flutter-based cross-platform app for movie ticket booking with features like latest release listings, seat selection, and secure payment integration. Focused on delivering a smooth user experience with an intuitive and responsive interface.',
+                    skills: ['Flutter', 'Dart', 'Android', 'iOS', 'Firebase'],
+                    url: 'https://www.sajithv.com/movie-tickets.html',
+                    year: '2023',
+                    image: 'assets/img/movie-booking-app.png',
+                    placeholderType: 'mobile'
+                },
+                onehire: {
+                    title: 'OneHire.lk — IT Job Platform',
+                    role: 'Software Architect and Full-stack Developer',
+                    description: 'OneHire.lk is a leading platform connecting IT professionals with the latest job opportunities and industry insights worldwide. Whether you\'re an experienced expert or just starting out, it helps you find the perfect role aligned with your skills and career goals.',
+                    skills: ['React', 'Spring Boot', 'AWS', 'Microservices', 'PostgreSQL'],
+                    url: 'https://www.linkedin.com/company/onehirelk',
+                    year: '2023',
+                    image: ''
+                },
+                ftracker: {
+                    title: 'FTracker — Personal Wealth Manager',
+                    role: 'Full-stack Developer',
+                    description: 'Ftracker is your automated personal wealth manager. It provides clarity and control over your finances by securely tracking and categorizing all your expenses, transforming complex budgeting into an effortless experience.',
+                    skills: ['React', 'Spring Boot', 'AWS', 'Microservices', 'PostgreSQL'],
+                    url: 'https://ftracker-seven.vercel.app',
+                    year: '2024',
+                    image: ''
+                }
+            };
+
+            $(document).on('click', '.project-card-link', function (e) {
+                e.preventDefault();
+                var key = $(this).data('project');
+                var p = projects[key];
+                if (!p) return;
+
+                $('#projectModalLabel').text(p.title);
+                $('#modalRole').text(p.role);
+                $('#modalDescription').text(p.description);
+                $('#modalDate').text('Published ' + p.year);
+
+                var chips = p.skills.map(function (s) {
+                    return '<span class="modal-skill-chip">' + s + '</span>';
+                }).join('');
+                $('#modalSkills').html(chips);
+
+                var displayUrl = p.url.replace(/^https?:\/\//, '').replace(/\/$/, '');
+                $('#modalVisitLink').attr('href', p.url);
+                $('#modalUrlText').text(displayUrl);
+                $('#modalAddressBar').text(displayUrl);
+                $('#modalCopyLink').data('url', p.url);
+
+                if (p.image) {
+                    $('#modalProjectImage').attr('src', p.image).show();
+                    $('#modalPlaceholder').hide();
+                    $('#modalPlaceholderMobile').hide();
+                } else {
+                    $('#modalProjectImage').hide().attr('src', '');
+                    if (p.placeholderType === 'mobile') {
+                        $('#modalPlaceholder').hide();
+                        $('#modalPlaceholderMobile').show();
+                    } else {
+                        $('#modalPlaceholder').show();
+                        $('#modalPlaceholderMobile').hide();
+                    }
+                }
+
+                $('#projectModal').modal('show');
+            });
+
+            $('#modalCopyLink').on('click', function () {
+                var url = $(this).data('url');
+                if (navigator.clipboard) {
+                    navigator.clipboard.writeText(url);
+                } else {
+                    var ta = $('<textarea>').val(url).appendTo('body').select();
+                    document.execCommand('copy');
+                    ta.remove();
+                }
+                var toast = $('#copyToast');
+                toast.fadeIn(200);
+                setTimeout(function () { toast.fadeOut(400); }, 2000);
+            });
+        })(jQuery);
+        </script>
     </body>
 </html>
