@@ -3,100 +3,321 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Sajith Vijesekara Personal Website, Expert in Java,AWS,Spring & Flutter Development. Mobile Freelance Developer(Android/Ios)" />
-        <meta name="keywords" content="android, ios, mobile developer, freelancer, srilanka , flutter , native, spring, aws , freelancer " />
+        <meta name="description" content="Movie Ticket Booking — A Flutter mobile app for discovering movies, selecting seats, and booking tickets instantly." />
         <meta name="author" content="sajith vijesekara" />
-        <title>Sajith Vijesekara - Software Engineer | Java | Spring | AWS | Mobile </title>
-        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
+        <title>Movie Ticket Booking App — Sajith Vijesekara</title>
+        <link rel="icon" type="image/x-icon" href="../assets/img/favicon.ico" />
         <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" />
         <link href="../css/styles.css" rel="stylesheet" />
-         <link href="css/card-view.css" rel="stylesheet" />
-        <link href="../css/device-slider.css" rel="stylesheet" />
-
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,900" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7C6YECVJHJ"></script>
+        <!-- Google tag -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-7C6YECVJHJ"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-7C6YECVJHJ');
+        </script>
 
- <!-- Bootstrap core JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://rawgit.com/rstacruz/jquery.transit/master/jquery.transit.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Third party plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        <style>
+            /* ─── Reset overrides for landing page ─── */
+            body { background: #fff; }
 
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+            /* ─── Phone frame ─── */
+            .lp-phone {
+                background: #1c1c1e;
+                border-radius: 46px;
+                padding: 10px;
+                box-shadow:
+                    0 50px 100px rgba(0,0,0,0.28),
+                    0 15px 35px rgba(0,0,0,0.14),
+                    inset 0 0 0 1.5px #3c3c3e;
+                position: relative;
+                flex-shrink: 0;
+            }
+            .lp-phone-notch {
+                position: absolute;
+                top: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 72px;
+                height: 22px;
+                background: #1c1c1e;
+                border-radius: 0 0 16px 16px;
+                z-index: 10;
+            }
+            .lp-phone-screen {
+                border-radius: 36px;
+                overflow: hidden;
+                background: #111;
+            }
+            .lp-phone-screen img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
 
-  gtag('config', 'G-7C6YECVJHJ');
-</script>
+            /* ─── HERO ─── */
+            .lp-hero {
+                min-height: 100vh;
+                background: linear-gradient(158deg, #fff8f4 0%, #ffffff 50%, #fef1e8 100%);
+                padding: 6rem 4rem 4rem;
+                display: flex;
+                align-items: center;
+                position: relative;
+                overflow: hidden;
+            }
+            .lp-hero::before {
+                content: '';
+                position: absolute;
+                width: 600px;
+                height: 600px;
+                border-radius: 50%;
+                background: radial-gradient(circle, rgba(189,93,56,0.08) 0%, transparent 70%);
+                top: -150px;
+                right: -120px;
+                pointer-events: none;
+            }
+            .lp-hero::after {
+                content: '';
+                position: absolute;
+                width: 400px;
+                height: 400px;
+                border-radius: 50%;
+                background: radial-gradient(circle, rgba(189,93,56,0.05) 0%, transparent 70%);
+                bottom: -80px;
+                left: 30%;
+                pointer-events: none;
+            }
+            .lp-hero-pill {
+                display: inline-flex;
+                align-items: center;
+                gap: 7px;
+                background: rgba(189,93,56,0.1);
+                border: 1px solid rgba(189,93,56,0.22);
+                color: #BD5D38;
+                border-radius: 20px;
+                padding: 5px 15px;
+                font-size: 0.78rem;
+                font-weight: 700;
+                margin-bottom: 1.5rem;
+                letter-spacing: 0.3px;
+            }
+            .lp-hero h1 {
+                font-size: 3.4rem;
+                font-weight: 800;
+                line-height: 1.12;
+                color: #1a1a1a;
+                margin-bottom: 1.25rem;
+            }
+            .lp-hero h1 span { color: #BD5D38; }
+            .lp-hero-sub {
+                font-size: 1.05rem;
+                color: #666;
+                line-height: 1.75;
+                max-width: 420px;
+                margin-bottom: 2rem;
+            }
+            .lp-store-btns { display: flex; gap: 0.85rem; flex-wrap: wrap; margin-bottom: 2.25rem; }
+            .lp-store-btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+                background: #1a1a1a;
+                color: #fff !important;
+                border-radius: 12px;
+                padding: 10px 20px;
+                font-size: 0.82rem;
+                text-decoration: none !important;
+                transition: background 0.18s, transform 0.18s;
+            }
+            .lp-store-btn:hover { background: #333; transform: translateY(-2px); }
+            .lp-store-btn i { font-size: 1.45rem; }
+            .lp-store-btn-text small { display: block; font-size: 0.62rem; opacity: 0.7; }
+            .lp-store-btn-text strong { font-size: 0.88rem; }
+            .lp-tech-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+            .lp-tech-tag {
+                font-size: 0.73rem;
+                color: #888;
+                background: #f2f2f2;
+                border-radius: 4px;
+                padding: 3px 10px;
+            }
 
-<script>
-       $(function() {
+            /* Hero phone arrangement */
+            .lp-hero-phones {
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+                gap: 1rem;
+                padding-top: 2rem;
+                position: relative;
+                z-index: 1;
+            }
+            .lp-phone-main {
+                width: 248px;
+                transform: translateY(-24px);
+                z-index: 3;
+            }
+            .lp-phone-main .lp-phone-screen { height: 496px; }
+            .lp-phone-side {
+                width: 192px;
+                opacity: 0.78;
+                z-index: 1;
+            }
+            .lp-phone-side .lp-phone-screen { height: 380px; }
+            .lp-phone-side-left { transform: translateY(16px) rotate(-5deg); transform-origin: bottom center; }
+            .lp-phone-side-right { transform: translateY(16px) rotate(5deg); transform-origin: bottom center; }
 
-  var passes = ['pass1', 'pass2', 'pass3', 'pass4', 'pass5', 'pass6', 'pass7', 'pass8', 'pass9' , 'pass10'];
-  var index = 0;
-  var reel = $('#reel');
+            /* ─── FEATURE SECTIONS ─── */
+            .lp-feature {
+                padding: 7rem 4rem;
+                background: #fff;
+            }
+            .lp-feature:nth-child(odd) { background: #faf9f7; }
 
-  var incrementIndex = function() {
-    index++, index > passes.length - 1 && (index = 0);
-  }
+            .lp-feature-number {
+                font-size: 5.5rem;
+                font-weight: 900;
+                color: #f0ece8;
+                line-height: 1;
+                margin-bottom: -0.75rem;
+                font-family: 'Saira Extra Condensed', sans-serif;
+                letter-spacing: -2px;
+            }
+            .lp-feature-badge {
+                display: inline-flex;
+                align-items: center;
+                gap: 7px;
+                color: #BD5D38;
+                font-size: 0.75rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 1.2px;
+                margin-bottom: 0.6rem;
+            }
+            .lp-feature-badge i { font-size: 0.45rem; }
+            .lp-feature-title {
+                font-size: 2.1rem;
+                font-weight: 800;
+                color: #1a1a1a;
+                line-height: 1.2;
+                margin-bottom: 1rem;
+            }
+            .lp-feature-desc {
+                font-size: 0.97rem;
+                color: #666;
+                line-height: 1.78;
+                max-width: 400px;
+                margin-bottom: 1.75rem;
+            }
+            .lp-feature-bullets { list-style: none; padding: 0; margin: 0; }
+            .lp-feature-bullets li {
+                display: flex;
+                align-items: flex-start;
+                gap: 10px;
+                font-size: 0.9rem;
+                color: #555;
+                margin-bottom: 0.65rem;
+            }
+            .lp-feature-bullets li i { color: #BD5D38; margin-top: 3px; flex-shrink: 0; }
 
-  var createSlide = function(index) {
-    var $div = $("<div>", {
-      class: "screenshot " + passes[index]
-    });
+            /* Feature phone column */
+            .lp-feature-phone-col {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 1.5rem 0;
+            }
+            .lp-feature-phone-col .lp-phone { width: 240px; }
+            .lp-feature-phone-col .lp-phone .lp-phone-screen { height: 478px; }
 
-    reel.append($div);
-  };
+            /* ─── CTA SECTION ─── */
+            .lp-cta {
+                background: linear-gradient(135deg, #BD5D38 0%, #9a4628 100%);
+                padding: 7rem 4rem;
+                text-align: center;
+                position: relative;
+                overflow: hidden;
+            }
+            .lp-cta::before {
+                content: '';
+                position: absolute;
+                width: 500px; height: 500px;
+                border-radius: 50%;
+                background: rgba(255,255,255,0.05);
+                top: -200px; right: -100px;
+            }
+            .lp-cta h2 {
+                font-size: 2.6rem;
+                font-weight: 800;
+                color: #fff;
+                margin-bottom: 1rem;
+            }
+            .lp-cta p {
+                font-size: 1.05rem;
+                color: rgba(255,255,255,0.8);
+                max-width: 480px;
+                margin: 0 auto 2rem;
+                line-height: 1.7;
+            }
+            .lp-btn-white {
+                display: inline-flex;
+                align-items: center;
+                gap: 9px;
+                background: #fff;
+                color: #BD5D38 !important;
+                border-radius: 10px;
+                padding: 13px 28px;
+                font-size: 0.92rem;
+                font-weight: 700;
+                text-decoration: none !important;
+                box-shadow: 0 8px 28px rgba(0,0,0,0.18);
+                transition: transform 0.18s, box-shadow 0.18s;
+            }
+            .lp-btn-white:hover { transform: translateY(-2px); box-shadow: 0 14px 36px rgba(0,0,0,0.22); }
 
-  var transitionSlides = function(duration, delay) {
-    var a = $(".screenshot");
-    $("#reel").transition({
-      translate: [-287],
-      duration: duration,
-      delay: delay,
-      easing: "easeInOutCubic",
-      complete: function() {
-        $("#reel").transition({
-          translate: [0],
-          duration: 0,
-          complete: function() {
-            $('.screenshot').first().remove();
-            initiateSlides(500, 2000);
-          }
-        });
-      }
-    });
-  }
+            /* ─── Scroll animations ─── */
+            .lp-anim {
+                opacity: 0;
+                transform: translateY(44px);
+                transition: opacity 0.7s cubic-bezier(.25,.8,.25,1), transform 0.7s cubic-bezier(.25,.8,.25,1);
+            }
+            .lp-anim-phone {
+                opacity: 0;
+                transform: translateY(64px) scale(0.96);
+                transition: opacity 0.75s cubic-bezier(.25,.8,.25,1), transform 0.75s cubic-bezier(.25,.8,.25,1);
+            }
+            .lp-anim.d1, .lp-anim-phone.d1 { transition-delay: 0.12s; }
+            .lp-anim.d2, .lp-anim-phone.d2 { transition-delay: 0.24s; }
+            .lp-anim.visible, .lp-anim-phone.visible {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
 
-  var initiateSlides = function(duration, delay) {
-    incrementIndex();
-    createSlide(index);
-    transitionSlides(duration, delay);
-  }
-
-  createSlide(index);
-  initiateSlides(500, 2000);
-
-});
-    </script>
-
-
+            /* ─── Responsive ─── */
+            @media (max-width: 991px) {
+                .lp-hero { padding: 5rem 2rem 3rem; min-height: auto; }
+                .lp-hero h1 { font-size: 2.2rem; }
+                .lp-phone-side { display: none; }
+                .lp-phone-main { transform: none; width: 210px; }
+                .lp-phone-main .lp-phone-screen { height: 420px; }
+                .lp-feature, .lp-cta { padding: 4rem 2rem; }
+                .lp-feature-title { font-size: 1.7rem; }
+                .lp-cta h2 { font-size: 1.9rem; }
+                .lp-feature-phone-col .lp-phone { width: 210px; }
+                .lp-feature-phone-col .lp-phone .lp-phone-screen { height: 420px; }
+            }
+        </style>
     </head>
-      <body id="page-top">
-        <!-- Navigation-->
+
+    <body id="page-top">
+        <!-- Navigation (kept as-is) -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
             <a class="navbar-brand js-scroll-trigger" href="#page-top">
                 <span class="d-block d-lg-none">Sajith Vijesekara</span>
@@ -117,21 +338,194 @@
         </nav>
 
         <div class="container-fluid p-0">
-            <section class="resume-section" id="about">
-                <div class="resume-section-content">
-                    <div class="phone">
-              <div class="screen">
-                <div class="reel" id="reel"></div>
-              </div>
-            </div>
+
+            <!-- ══ HERO ══ -->
+            <section class="lp-hero" id="about">
+                <div class="row m-0 w-100 align-items-center">
+                    <div class="col-lg-5 mb-5 mb-lg-0">
+                        <div class="lp-hero-pill">
+                            <i class="fas fa-film"></i> Flutter · Android &amp; iOS
+                        </div>
+                        <h1>Book Cinema<br>Tickets <span>Effortlessly</span></h1>
+                        <p class="lp-hero-sub">Discover the latest blockbusters, pick your perfect seat, and secure your spot — all in just a few taps.</p>
+                        <div class="lp-store-btns">
+                            <a href="#" class="lp-store-btn">
+                                <i class="fab fa-google-play"></i>
+                                <span class="lp-store-btn-text">
+                                    <small>Get it on</small>
+                                    <strong>Google Play</strong>
+                                </span>
+                            </a>
+                            <a href="#" class="lp-store-btn">
+                                <i class="fab fa-apple"></i>
+                                <span class="lp-store-btn-text">
+                                    <small>Download on the</small>
+                                    <strong>App Store</strong>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="lp-tech-tags">
+                            <span class="lp-tech-tag">Flutter</span>
+                            <span class="lp-tech-tag">Dart</span>
+                            <span class="lp-tech-tag">Firebase</span>
+                            <span class="lp-tech-tag">Android</span>
+                            <span class="lp-tech-tag">iOS</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="lp-hero-phones">
+                            <div class="lp-phone lp-phone-side lp-phone-side-left">
+                                <div class="lp-phone-notch"></div>
+                                <div class="lp-phone-screen">
+                                    <img src="../assets/img/movie-tickets/003.jpg" alt="Movie listings" />
+                                </div>
+                            </div>
+                            <div class="lp-phone lp-phone-main">
+                                <div class="lp-phone-notch"></div>
+                                <div class="lp-phone-screen">
+                                    <img src="../assets/img/movie-tickets/001.jpg" alt="Movie Booking Home" />
+                                </div>
+                            </div>
+                            <div class="lp-phone lp-phone-side lp-phone-side-right">
+                                <div class="lp-phone-notch"></div>
+                                <div class="lp-phone-screen">
+                                    <img src="../assets/img/movie-tickets/005.jpg" alt="Seat selection" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
+
+            <!-- ══ FEATURE 1 — Browse ══ -->
+            <section class="lp-feature">
+                <div class="row m-0 align-items-center">
+                    <div class="col-lg-5 mb-4 mb-lg-0 lp-anim">
+                        <div class="lp-feature-number">01</div>
+                        <div class="lp-feature-badge"><i class="fas fa-circle"></i> Discover</div>
+                        <h2 class="lp-feature-title">Browse What's Playing Near You</h2>
+                        <p class="lp-feature-desc">Explore a curated list of now-showing and upcoming films. Filter by genre, rating, or language and find exactly what you're in the mood for.</p>
+                        <ul class="lp-feature-bullets">
+                            <li><i class="fas fa-check-circle"></i> New releases updated daily</li>
+                            <li><i class="fas fa-check-circle"></i> Ratings &amp; reviews at a glance</li>
+                            <li><i class="fas fa-check-circle"></i> Filter by cinema, genre &amp; time</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-7 lp-feature-phone-col">
+                        <div class="lp-phone lp-anim-phone d1">
+                            <div class="lp-phone-notch"></div>
+                            <div class="lp-phone-screen">
+                                <img src="../assets/img/movie-tickets/002.jpg" alt="Browse movies screen" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ══ FEATURE 2 — Details (reversed) ══ -->
+            <section class="lp-feature">
+                <div class="row m-0 align-items-center flex-lg-row-reverse">
+                    <div class="col-lg-5 mb-4 mb-lg-0 lp-anim">
+                        <div class="lp-feature-number">02</div>
+                        <div class="lp-feature-badge"><i class="fas fa-circle"></i> Explore</div>
+                        <h2 class="lp-feature-title">Rich Movie Details &amp; Showtimes</h2>
+                        <p class="lp-feature-desc">Get the full picture before you book — cast, synopsis, runtime, and audience ratings all in one place with live showtime schedules.</p>
+                        <ul class="lp-feature-bullets">
+                            <li><i class="fas fa-check-circle"></i> Full cast &amp; crew information</li>
+                            <li><i class="fas fa-check-circle"></i> Embedded trailer preview</li>
+                            <li><i class="fas fa-check-circle"></i> Live showtimes by location</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-7 lp-feature-phone-col">
+                        <div class="lp-phone lp-anim-phone d1">
+                            <div class="lp-phone-notch"></div>
+                            <div class="lp-phone-screen">
+                                <img src="../assets/img/movie-tickets/004.jpg" alt="Movie details screen" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ══ FEATURE 3 — Seats ══ -->
+            <section class="lp-feature">
+                <div class="row m-0 align-items-center">
+                    <div class="col-lg-5 mb-4 mb-lg-0 lp-anim">
+                        <div class="lp-feature-number">03</div>
+                        <div class="lp-feature-badge"><i class="fas fa-circle"></i> Choose</div>
+                        <h2 class="lp-feature-title">Pick Your Perfect Seat</h2>
+                        <p class="lp-feature-desc">An interactive seat map shows real-time availability. Select from standard, premium, or couple seats and lock them in before they're gone.</p>
+                        <ul class="lp-feature-bullets">
+                            <li><i class="fas fa-check-circle"></i> Real-time seat availability</li>
+                            <li><i class="fas fa-check-circle"></i> Standard, premium &amp; couple seats</li>
+                            <li><i class="fas fa-check-circle"></i> Multi-seat group booking</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-7 lp-feature-phone-col">
+                        <div class="lp-phone lp-anim-phone d1">
+                            <div class="lp-phone-notch"></div>
+                            <div class="lp-phone-screen">
+                                <img src="../assets/img/movie-tickets/006.jpg" alt="Seat selection screen" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ══ FEATURE 4 — Tickets (reversed) ══ -->
+            <section class="lp-feature">
+                <div class="row m-0 align-items-center flex-lg-row-reverse">
+                    <div class="col-lg-5 mb-4 mb-lg-0 lp-anim">
+                        <div class="lp-feature-number">04</div>
+                        <div class="lp-feature-badge"><i class="fas fa-circle"></i> Collect</div>
+                        <h2 class="lp-feature-title">Your Tickets, Always in Your Pocket</h2>
+                        <p class="lp-feature-desc">Instant digital tickets with QR code delivery — show your phone at the door, no printing needed. All bookings stored securely in the app.</p>
+                        <ul class="lp-feature-bullets">
+                            <li><i class="fas fa-check-circle"></i> Instant QR code on booking</li>
+                            <li><i class="fas fa-check-circle"></i> Works offline at the venue</li>
+                            <li><i class="fas fa-check-circle"></i> Full booking history</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-7 lp-feature-phone-col">
+                        <div class="lp-phone lp-anim-phone d1">
+                            <div class="lp-phone-notch"></div>
+                            <div class="lp-phone-screen">
+                                <img src="../assets/img/movie-tickets/008.jpg" alt="Digital ticket screen" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ══ CTA ══ -->
+            <section class="lp-cta">
+                <div class="lp-anim">
+                    <h2>Ready for Your Next Movie Night?</h2>
+                    <p>Book tickets in under a minute. Want to build something similar? Let's talk.</p>
+                    <a href="https://calendly.com/sajith-vijesekara/end-to-end-product-design-development-consultation" target="_blank" rel="noopener" class="lp-btn-white">
+                        <i class="fas fa-calendar-alt"></i> Book a 1:1 Meeting
+                    </a>
+                </div>
+            </section>
+
         </div>
 
-        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <script src="../js/scripts.js"></script>
+        <script>
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.2 });
 
-
-       
-
+            document.querySelectorAll('.lp-anim, .lp-anim-phone').forEach(function (el) {
+                observer.observe(el);
+            });
+        </script>
     </body>
 </html>
