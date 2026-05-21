@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(file /home/sajith/projects/personal/my_git_site/sajith4u.github.com/assets/img/kids-app/*.jpg)"
+    ]
+  }
+}

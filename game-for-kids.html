@@ -3,100 +3,331 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Sajith Vijesekara Personal Website, Expert in Java,AWS,Spring & Flutter Development. Mobile Freelance Developer(Android/Ios)" />
-         <meta name="keywords" content="android, ios, mobile developer, freelancer, srilanka , flutter , native, spring, aws , freelancer , freelancer for app development, freelance mobile app developer, freelance android app developer , offshore app development, offshore mobile app development , creating my own app, making my own app,  find app developer for startup, startup app development company, machine learning in finance, mobile software development services, playstore , ios " />
+        <meta name="description" content="Bopo &amp; Friends — A fun mobile game that helps kids identify and remember everyday objects, improving memory and cognitive skills through play." />
+        <meta name="keywords" content="kids game, mobile game, flutter, memory game, children app, educational game, bopo, sajith vijesekara" />
         <meta name="author" content="sajith vijesekara" />
-        <title>Sajith Vijesekara - Mobile App Movie Ticket Booking </title>
+        <title>Bopo &amp; Friends — Kids Memory Game | Sajith Vijesekara</title>
         <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
-         <link href="css/card-view.css" rel="stylesheet" />
-        <link href="css/device-slider.css" rel="stylesheet" />
-
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,900" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7C6YECVJHJ"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-7C6YECVJHJ"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-7C6YECVJHJ');
+        </script>
 
- <!-- Bootstrap core JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://rawgit.com/rstacruz/jquery.transit/master/jquery.transit.js"></script> 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Third party plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        <style>
+            body { background: #fff; }
 
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+            /* ─── Landscape phone frame ─── */
+            .lp-phone-land {
+                background: #1c1c1e;
+                border-radius: 28px;
+                padding: 10px 14px;
+                box-shadow:
+                    0 40px 80px rgba(0,0,0,0.26),
+                    0 12px 28px rgba(0,0,0,0.13),
+                    inset 0 0 0 1.5px #3c3c3e;
+                position: relative;
+                width: 100%;
+                max-width: 560px;
+                margin: 0 auto;
+            }
+            /* Camera dot on left short edge */
+            .lp-phone-land::before {
+                content: '';
+                position: absolute;
+                left: 6px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 7px;
+                height: 7px;
+                background: #2a2a2c;
+                border-radius: 50%;
+                z-index: 10;
+            }
+            /* Power button on right short edge */
+            .lp-phone-land::after {
+                content: '';
+                position: absolute;
+                right: -3px;
+                top: 30%;
+                width: 3px;
+                height: 32px;
+                background: #2a2a2c;
+                border-radius: 0 3px 3px 0;
+            }
+            .lp-phone-land-screen {
+                border-radius: 18px;
+                overflow: hidden;
+                background: #000;
+                aspect-ratio: 2340 / 1080;
+            }
+            .lp-phone-land-screen img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
 
-  gtag('config', 'G-7C6YECVJHJ');
-</script>
+            /* ─── HERO ─── */
+            .lp-hero {
+                min-height: 100vh;
+                background: linear-gradient(155deg, #fff9f0 0%, #ffffff 55%, #fdf0e0 100%);
+                padding: 6rem 4rem 4rem;
+                display: flex;
+                align-items: center;
+                position: relative;
+                overflow: hidden;
+            }
+            .lp-hero::before {
+                content: '';
+                position: absolute;
+                width: 650px; height: 650px;
+                border-radius: 50%;
+                background: radial-gradient(circle, rgba(189,93,56,0.07) 0%, transparent 70%);
+                top: -180px; right: -150px;
+                pointer-events: none;
+            }
+            .lp-hero::after {
+                content: '';
+                position: absolute;
+                width: 420px; height: 420px;
+                border-radius: 50%;
+                background: radial-gradient(circle, rgba(189,93,56,0.05) 0%, transparent 70%);
+                bottom: -100px; left: 25%;
+                pointer-events: none;
+            }
+            .lp-hero-pill {
+                display: inline-flex;
+                align-items: center;
+                gap: 7px;
+                background: rgba(189,93,56,0.1);
+                border: 1px solid rgba(189,93,56,0.22);
+                color: #BD5D38;
+                border-radius: 20px;
+                padding: 5px 15px;
+                font-size: 0.78rem;
+                font-weight: 700;
+                margin-bottom: 1.5rem;
+            }
+            .lp-hero h1 {
+                font-size: 3.2rem;
+                font-weight: 800;
+                line-height: 1.12;
+                color: #1a1a1a;
+                margin-bottom: 1.25rem;
+            }
+            .lp-hero h1 span { color: #BD5D38; }
+            .lp-hero-sub {
+                font-size: 1.02rem;
+                color: #666;
+                line-height: 1.75;
+                max-width: 420px;
+                margin-bottom: 2rem;
+            }
+            .lp-store-btns { display: flex; gap: 0.85rem; flex-wrap: wrap; margin-bottom: 2.25rem; }
+            .lp-store-btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+                background: #1a1a1a;
+                color: #fff !important;
+                border-radius: 12px;
+                padding: 10px 20px;
+                font-size: 0.82rem;
+                text-decoration: none !important;
+                transition: background 0.18s, transform 0.18s;
+            }
+            .lp-store-btn:hover { background: #333; transform: translateY(-2px); }
+            .lp-store-btn i { font-size: 1.4rem; }
+            .lp-store-btn-text small { display: block; font-size: 0.62rem; opacity: 0.7; }
+            .lp-store-btn-text strong { font-size: 0.88rem; }
+            .lp-tech-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+            .lp-tech-tag {
+                font-size: 0.73rem; color: #888;
+                background: #f2f2f2; border-radius: 4px; padding: 3px 10px;
+            }
 
-<script>
-       $(function() {
+            /* Hero landscape phone stack */
+            .lp-hero-phones-land {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+                padding-top: 1.5rem;
+                position: relative;
+                z-index: 1;
+                max-width: 520px;
+                margin: 0 auto;
+            }
+            .lp-hero-phone-primary { transform: translateX(16px); }
+            .lp-hero-phone-secondary { width: 92%; opacity: 0.82; transform: translateX(-16px); }
 
-  var passes = ['pass1', 'pass2', 'pass3', 'pass4', 'pass5', 'pass6', 'pass7', 'pass8', 'pass9' , 'pass10'];
-  var index = 0;
-  var reel = $('#reel');
+            /* ─── FEATURE SECTIONS ─── */
+            .lp-feature {
+                padding: 7rem 4rem;
+                background: #fff;
+            }
+            .lp-feature:nth-child(odd) { background: #faf9f7; }
 
-  var incrementIndex = function() {
-    index++, index > passes.length - 1 && (index = 0);
-  }
+            .lp-feature-number {
+                font-size: 5.5rem;
+                font-weight: 900;
+                color: #f0ece8;
+                line-height: 1;
+                margin-bottom: -0.75rem;
+                font-family: 'Saira Extra Condensed', sans-serif;
+                letter-spacing: -2px;
+            }
+            .lp-feature-badge {
+                display: inline-flex;
+                align-items: center;
+                gap: 7px;
+                color: #BD5D38;
+                font-size: 0.75rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 1.2px;
+                margin-bottom: 0.6rem;
+            }
+            .lp-feature-badge i { font-size: 0.45rem; }
+            .lp-feature-title {
+                font-size: 2.1rem;
+                font-weight: 800;
+                color: #1a1a1a;
+                line-height: 1.2;
+                margin-bottom: 1rem;
+            }
+            .lp-feature-desc {
+                font-size: 0.97rem;
+                color: #666;
+                line-height: 1.78;
+                max-width: 400px;
+                margin-bottom: 1.75rem;
+            }
+            .lp-feature-bullets { list-style: none; padding: 0; margin: 0; }
+            .lp-feature-bullets li {
+                display: flex;
+                align-items: flex-start;
+                gap: 10px;
+                font-size: 0.9rem;
+                color: #555;
+                margin-bottom: 0.65rem;
+            }
+            .lp-feature-bullets li i { color: #BD5D38; margin-top: 3px; flex-shrink: 0; }
 
-  var createSlide = function(index) {
-    var $div = $("<div>", {
-      class: "screenshot " + passes[index]
-    });
+            /* Feature landscape phone column */
+            .lp-feature-land-col {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 1.5rem 0;
+            }
 
-    reel.append($div);
-  };
+            /* ─── GALLERY SECTION ─── */
+            .lp-gallery {
+                padding: 6rem 4rem;
+                background: #f5f3f0;
+            }
+            .lp-gallery-title {
+                font-size: 1.8rem;
+                font-weight: 800;
+                color: #1a1a1a;
+                margin-bottom: 0.5rem;
+            }
+            .lp-gallery-sub {
+                font-size: 0.95rem;
+                color: #888;
+                margin-bottom: 3rem;
+            }
+            .lp-gallery-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
 
-  var transitionSlides = function(duration, delay) {
-    var a = $(".screenshot");
-    $("#reel").transition({
-      translate: [-287],
-      duration: duration,
-      delay: delay,
-      easing: "easeInOutCubic",
-      complete: function() {
-        $("#reel").transition({
-          translate: [0],
-          duration: 0,
-          complete: function() {
-            $('.screenshot').first().remove();
-            initiateSlides(500, 2000);
-          }
-        });
-      }
-    });
-  }
+            /* ─── CTA SECTION ─── */
+            .lp-cta {
+                background: linear-gradient(135deg, #BD5D38 0%, #9a4628 100%);
+                padding: 7rem 4rem;
+                text-align: center;
+                position: relative;
+                overflow: hidden;
+            }
+            .lp-cta::before {
+                content: '';
+                position: absolute;
+                width: 500px; height: 500px;
+                border-radius: 50%;
+                background: rgba(255,255,255,0.05);
+                top: -200px; right: -100px;
+            }
+            .lp-cta h2 { font-size: 2.5rem; font-weight: 800; color: #fff; margin-bottom: 1rem; }
+            .lp-cta p {
+                font-size: 1.05rem;
+                color: rgba(255,255,255,0.82);
+                max-width: 480px;
+                margin: 0 auto 2rem;
+                line-height: 1.7;
+            }
+            .lp-btn-white {
+                display: inline-flex;
+                align-items: center;
+                gap: 9px;
+                background: #fff;
+                color: #BD5D38 !important;
+                border-radius: 10px;
+                padding: 13px 28px;
+                font-size: 0.92rem;
+                font-weight: 700;
+                text-decoration: none !important;
+                box-shadow: 0 8px 28px rgba(0,0,0,0.18);
+                transition: transform 0.18s, box-shadow 0.18s;
+            }
+            .lp-btn-white:hover { transform: translateY(-2px); box-shadow: 0 14px 36px rgba(0,0,0,0.22); }
 
-  var initiateSlides = function(duration, delay) {
-    incrementIndex();
-    createSlide(index);
-    transitionSlides(duration, delay);
-  }
+            /* ─── Scroll animations ─── */
+            .lp-anim {
+                opacity: 0;
+                transform: translateY(44px);
+                transition: opacity 0.7s cubic-bezier(.25,.8,.25,1), transform 0.7s cubic-bezier(.25,.8,.25,1);
+            }
+            .lp-anim-up {
+                opacity: 0;
+                transform: translateY(56px) scale(0.97);
+                transition: opacity 0.75s cubic-bezier(.25,.8,.25,1), transform 0.75s cubic-bezier(.25,.8,.25,1);
+            }
+            .lp-anim.d1, .lp-anim-up.d1 { transition-delay: 0.12s; }
+            .lp-anim.d2, .lp-anim-up.d2 { transition-delay: 0.26s; }
+            .lp-anim.visible, .lp-anim-up.visible {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
 
-  createSlide(index);
-  initiateSlides(500, 2000);
-
-});
-    </script>
-
-
+            /* ─── Responsive ─── */
+            @media (max-width: 991px) {
+                .lp-hero { padding: 5rem 2rem 3rem; min-height: auto; }
+                .lp-hero h1 { font-size: 2rem; }
+                .lp-hero-phone-secondary { display: none; }
+                .lp-hero-phone-primary { transform: none; }
+                .lp-feature, .lp-gallery, .lp-cta { padding: 4rem 2rem; }
+                .lp-feature-title { font-size: 1.7rem; }
+                .lp-cta h2 { font-size: 1.9rem; }
+                .lp-gallery-grid { grid-template-columns: 1fr; }
+            }
+        </style>
     </head>
-      <body id="page-top">
-        <!-- Navigation-->
+
+    <body id="page-top">
+        <!-- Navigation (kept as-is) -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
             <a class="navbar-brand js-scroll-trigger" href="#page-top">
                 <span class="d-block d-lg-none">Sajith Vijesekara</span>
@@ -117,19 +348,205 @@
         </nav>
 
         <div class="container-fluid p-0">
-            <section class="mobile-details" id="about">
-               <div class="phone">
-              <div class="screen">
-                <div class="reel" id="reel"></div>
-              </div>
-            </div>
+
+            <!-- ══ HERO ══ -->
+            <section class="lp-hero" id="about">
+                <div class="row m-0 w-100 align-items-center">
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <div class="lp-hero-pill">
+                            <i class="fas fa-gamepad"></i> Mobile Game · Flutter
+                        </div>
+                        <h1>Bopo &amp;<br><span>Friends</span></h1>
+                        <p class="lp-hero-sub">A fun and engaging mobile game that helps children identify and remember everyday objects — improving memory, focus, and cognitive skills through play.</p>
+                        <div class="lp-store-btns">
+                            <a href="#" class="lp-store-btn">
+                                <i class="fab fa-google-play"></i>
+                                <span class="lp-store-btn-text">
+                                    <small>Get it on</small>
+                                    <strong>Google Play</strong>
+                                </span>
+                            </a>
+                            <a href="#" class="lp-store-btn">
+                                <i class="fab fa-apple"></i>
+                                <span class="lp-store-btn-text">
+                                    <small>Download on the</small>
+                                    <strong>App Store</strong>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="lp-tech-tags">
+                            <span class="lp-tech-tag">Flutter</span>
+                            <span class="lp-tech-tag">Dart</span>
+                            <span class="lp-tech-tag">Android</span>
+                            <span class="lp-tech-tag">iOS</span>
+                            <span class="lp-tech-tag">Kids &amp; Education</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="lp-hero-phones-land">
+                            <div class="lp-phone-land lp-hero-phone-primary">
+                                <div class="lp-phone-land-screen">
+                                    <img src="assets/img/kids-app/screen1.jpg" alt="Bopo &amp; Friends gameplay" />
+                                </div>
+                            </div>
+                            <div class="lp-phone-land lp-hero-phone-secondary">
+                                <div class="lp-phone-land-screen">
+                                    <img src="assets/img/kids-app/screen2.jpg" alt="Bopo &amp; Friends objects screen" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
+
+            <!-- ══ FEATURE 1 — Discover Objects ══ -->
+            <section class="lp-feature">
+                <div class="row m-0 align-items-center">
+                    <div class="col-lg-4 mb-4 mb-lg-0 lp-anim">
+                        <div class="lp-feature-number">01</div>
+                        <div class="lp-feature-badge"><i class="fas fa-circle"></i> Discover</div>
+                        <h2 class="lp-feature-title">Explore a World of Objects</h2>
+                        <p class="lp-feature-desc">Children explore a vibrant world filled with everyday objects — animals, vehicles, fruits, and more — each beautifully illustrated to capture young imaginations.</p>
+                        <ul class="lp-feature-bullets">
+                            <li><i class="fas fa-check-circle"></i> Hundreds of everyday objects</li>
+                            <li><i class="fas fa-check-circle"></i> Grouped by fun categories</li>
+                            <li><i class="fas fa-check-circle"></i> Colorful, kid-friendly artwork</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-8 lp-feature-land-col">
+                        <div class="lp-phone-land lp-anim-up d1">
+                            <div class="lp-phone-land-screen">
+                                <img src="assets/img/kids-app/003.jpg" alt="Discover objects screen" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ══ FEATURE 2 — Memory Challenge (reversed) ══ -->
+            <section class="lp-feature">
+                <div class="row m-0 align-items-center flex-lg-row-reverse">
+                    <div class="col-lg-4 mb-4 mb-lg-0 lp-anim">
+                        <div class="lp-feature-number">02</div>
+                        <div class="lp-feature-badge"><i class="fas fa-circle"></i> Remember</div>
+                        <h2 class="lp-feature-title">Memory Challenges That Grow</h2>
+                        <p class="lp-feature-desc">Progressively harder memory rounds keep kids challenged and engaged. The game adapts to each child's pace, ensuring just the right level of difficulty.</p>
+                        <ul class="lp-feature-bullets">
+                            <li><i class="fas fa-check-circle"></i> Adaptive difficulty levels</li>
+                            <li><i class="fas fa-check-circle"></i> Short, focused game rounds</li>
+                            <li><i class="fas fa-check-circle"></i> Instant visual feedback</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-8 lp-feature-land-col">
+                        <div class="lp-phone-land lp-anim-up d1">
+                            <div class="lp-phone-land-screen">
+                                <img src="assets/img/kids-app/004.jpg" alt="Memory challenge screen" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ══ FEATURE 3 — Matching Game ══ -->
+            <section class="lp-feature">
+                <div class="row m-0 align-items-center">
+                    <div class="col-lg-4 mb-4 mb-lg-0 lp-anim">
+                        <div class="lp-feature-number">03</div>
+                        <div class="lp-feature-badge"><i class="fas fa-circle"></i> Match</div>
+                        <h2 class="lp-feature-title">Fun Object Matching Games</h2>
+                        <p class="lp-feature-desc">Interactive matching rounds make learning irresistible. Kids drag and match objects to their names or pairs, building recognition skills without even realising it.</p>
+                        <ul class="lp-feature-bullets">
+                            <li><i class="fas fa-check-circle"></i> Tap &amp; drag interactions</li>
+                            <li><i class="fas fa-check-circle"></i> Sound &amp; visual rewards</li>
+                            <li><i class="fas fa-check-circle"></i> Multiple game modes</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-8 lp-feature-land-col">
+                        <div class="lp-phone-land lp-anim-up d1">
+                            <div class="lp-phone-land-screen">
+                                <img src="assets/img/kids-app/005.jpg" alt="Matching game screen" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ══ FEATURE 4 — Progress (reversed) ══ -->
+            <section class="lp-feature">
+                <div class="row m-0 align-items-center flex-lg-row-reverse">
+                    <div class="col-lg-4 mb-4 mb-lg-0 lp-anim">
+                        <div class="lp-feature-number">04</div>
+                        <div class="lp-feature-badge"><i class="fas fa-circle"></i> Grow</div>
+                        <h2 class="lp-feature-title">Watch Your Child's Progress</h2>
+                        <p class="lp-feature-desc">Parents and caregivers can track which categories and objects their child has mastered, celebrating milestones and identifying areas to revisit.</p>
+                        <ul class="lp-feature-bullets">
+                            <li><i class="fas fa-check-circle"></i> Category-by-category tracking</li>
+                            <li><i class="fas fa-check-circle"></i> Stars &amp; achievement badges</li>
+                            <li><i class="fas fa-check-circle"></i> Safe, no-ad experience</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-8 lp-feature-land-col">
+                        <div class="lp-phone-land lp-anim-up d1">
+                            <div class="lp-phone-land-screen">
+                                <img src="assets/img/kids-app/006.jpg" alt="Progress tracking screen" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ══ SCREENSHOT GALLERY ══ -->
+            <section class="lp-gallery">
+                <div class="row m-0 mb-4">
+                    <div class="col-12 lp-anim">
+                        <p class="lp-gallery-sub mb-1" style="color:#BD5D38; font-weight:700; font-size:0.75rem; text-transform:uppercase; letter-spacing:1.2px;">More Gameplay</p>
+                        <h2 class="lp-gallery-title">See Bopo in Action</h2>
+                        <p class="lp-gallery-sub">A glimpse at more of the fun scenes and challenges waiting inside the game.</p>
+                    </div>
+                </div>
+                <div class="lp-gallery-grid">
+                    <div class="lp-phone-land lp-anim-up">
+                        <div class="lp-phone-land-screen">
+                            <img src="assets/img/kids-app/007.jpg" alt="Gameplay screenshot" />
+                        </div>
+                    </div>
+                    <div class="lp-phone-land lp-anim-up d1">
+                        <div class="lp-phone-land-screen">
+                            <img src="assets/img/kids-app/008.jpg" alt="Gameplay screenshot" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ══ CTA ══ -->
+            <section class="lp-cta">
+                <div class="lp-anim">
+                    <h2>Build Something for Kids?</h2>
+                    <p>Want to create an engaging educational app for children? Let's discuss your idea.</p>
+                    <a href="https://calendly.com/sajith-vijesekara/end-to-end-product-design-development-consultation" target="_blank" rel="noopener" class="lp-btn-white">
+                        <i class="fas fa-calendar-alt"></i> Book a 1:1 Meeting
+                    </a>
+                </div>
+            </section>
+
         </div>
 
-        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <script src="js/scripts.js"></script>
+        <script>
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.18 });
 
-
-       
-
+            document.querySelectorAll('.lp-anim, .lp-anim-up').forEach(function (el) {
+                observer.observe(el);
+            });
+        </script>
     </body>
 </html>

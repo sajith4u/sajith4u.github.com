@@ -164,6 +164,15 @@
                 text-align: right;
                 margin-bottom: 0;
             }
+            /* Production verified badge */
+            .prod-verified-icon {
+                color: #BD5D38;
+                font-size: 0.62em;
+                vertical-align: middle;
+                margin-left: 5px;
+                position: relative;
+                top: -2px;
+            }
             /* copy-link toast */
             #copyToast {
                 position: fixed;
@@ -521,7 +530,7 @@ restaurant ordering system.</p>
                           <a href="https://www.simplehr.io/" class="project-card-link" data-project="simplehr" style="text-decoration: none; color: inherit;">
                           <div class="cardv2 card-empty">
                             
-                            <span><h3>SimpleHR.io</h3>  <img src="assets/img/saas.png" style="height: 35px" class="mobile"/> </span>
+                            <span><h3>SimpleHR.io <i class="fas fa-check-circle prod-verified-icon" title="In Production"></i></h3>  <img src="assets/img/saas.png" style="height: 35px" class="mobile"/> </span>
                              </br>
                             <b style="margin-bottom: 10px;" class="workLabel">Personal</b>
                             </br>
@@ -617,7 +626,7 @@ restaurant ordering system.</p>
                             
                            
 
-                            <span><h3>Movie Booking Platform</h3>  <img src="assets/img/md.png" style="height: 35px" class="mobile"/> </span>
+                            <span><h3>Movie Booking Platform <i class="fas fa-check-circle prod-verified-icon" title="In Production"></i></h3>  <img src="assets/img/md.png" style="height: 35px" class="mobile"/> </span>
                              </br>
                             <b style="margin-bottom: 10px;" class="workLabel">Personal</b>
                             </br>
@@ -639,7 +648,7 @@ restaurant ordering system.</p>
                           <a href="https://www.linkedin.com/company/onehirelk" class="project-card-link" data-project="onehire" style="text-decoration: none; color: inherit;">
                           <div class="cardv2 card-empty">
                             
-                           <span><h3>OneHire.lk</h3>  <img src="assets/img/saas.png" style="height: 35px" class="mobile"/> </span>
+                           <span><h3>OneHire.lk <i class="fas fa-check-circle prod-verified-icon" title="In Production"></i></h3>  <img src="assets/img/saas.png" style="height: 35px" class="mobile"/> </span>
                              </br>
                             <b style="margin-bottom: 10px;" class="workLabel">Community</b>
                             </br>
@@ -678,12 +687,29 @@ restaurant ordering system.</p>
                         </a>
                         </div>
 
-                        
+                        <div class="col-md-3">
+                          <a href="game-for-kids.html" class="project-card-link" data-project="bopo" style="text-decoration: none; color: inherit;">
+                          <div class="cardv2 card-empty">
+                            <span><h3>Bopo &amp; Friends</h3>  <img src="assets/img/md.png" style="height: 35px" class="mobile"/> </span>
+                            </br>
+                            <b style="margin-bottom: 10px;" class="workLabel">Personal</b>
+                            </br>
+                            <span style="color: #BD5D38">Bopo &amp; Friends is a fun mobile game that helps kids identify and remember everyday objects through interactive gameplay, improving memory and cognitive skills in a playful way.</span>
+                            </br>
+                            <div style="display:flex; border-top: 0px; align-self: flex-end;">
+                                <h5 class="typeLabel" style=" display: inline-block;">Mobile</h5>
+                                <h5 class="typeLabel" style=" display: inline-block; margin-left: 3px;">Flutter</h5>
+                                <h5 class="typeLabel" style=" display: inline-block; margin-left: 3px;">Game</h5>
+                                <h5 class="typeLabel" style=" display: inline-block; margin-left: 3px;">Kids</h5>
+                            </div>
+                          </div>
+                          </a>
+                        </div>
 
                         </div>
                     </div>
-                    
-              
+
+
                  </div>
                     
                     
@@ -1130,6 +1156,16 @@ restaurant ordering system.</p>
                     url: 'https://ftracker-seven.vercel.app',
                     year: '2024',
                     image: ''
+                },
+                bopo: {
+                    title: 'Bopo & Friends — Kids Memory Game',
+                    role: 'Mobile Developer',
+                    description: 'Bopo & Friends is a fun and educational mobile game that helps children identify and remember everyday objects through interactive gameplay. Designed to improve memory and cognitive skills in a playful and engaging environment.',
+                    skills: ['Flutter', 'Dart', 'Android', 'iOS'],
+                    url: 'game-for-kids.html',
+                    year: '2024',
+                    image: '',
+                    placeholderType: 'mobile'
                 }
             };
 
