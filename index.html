@@ -156,14 +156,6 @@
                 background: linear-gradient(to bottom, transparent, #fff 60%);
                 pointer-events: none;
             }
-            /* Image size guide shown below frame */
-            .modal-img-guide {
-                font-size: 0.7rem;
-                color: #ccc;
-                margin-top: 6px;
-                text-align: right;
-                margin-bottom: 0;
-            }
             /* Production verified badge */
             .prod-verified-icon {
                 color: #BD5D38;
@@ -688,6 +680,25 @@ restaurant ordering system.</p>
                         </div>
 
                         <div class="col-md-3">
+                          <a href="https://ofleet.online" class="project-card-link" data-project="ofleet" style="text-decoration: none; color: inherit;">
+                          <div class="cardv2 card-empty">
+                            <span><h3>OFleet</h3>  <img loading="lazy" src="assets/img/saas.png" style="height: 35px" class="mobile"/> </span>
+                            </br>
+                            <b style="margin-bottom: 10px;" class="workLabel">Personal</b>
+                            </br>
+                            <span style="color: #BD5D38">AI-driven B2B SaaS platform that optimises proprietary transportation systems for SMEs — intelligently managing drivers, vehicles, and multi-stop routing to cut operational overhead.</span>
+                            </br>
+                            <div style="display:flex; border-top: 0px; align-self: flex-end;">
+                                <h5 class="typeLabel" style=" display: inline-block;">SaaS</h5>
+                                <h5 class="typeLabel" style=" display: inline-block; margin-left: 3px;">AI</h5>
+                                <h5 class="typeLabel" style=" display: inline-block; margin-left: 3px;">Spring</h5>
+                                <h5 class="typeLabel" style=" display: inline-block; margin-left: 3px;">React</h5>
+                            </div>
+                          </div>
+                          </a>
+                        </div>
+
+                        <div class="col-md-3">
                           <a href="game-for-kids.html" class="project-card-link" data-project="bopo" style="text-decoration: none; color: inherit;">
                           <div class="cardv2 card-empty">
                             <span><h3>Bopo &amp; Friends</h3>  <img src="assets/img/md.png" style="height: 35px" class="mobile"/> </span>
@@ -942,7 +953,8 @@ restaurant ordering system.</p>
                                 <div id="modalSkills"></div>
                                 <p class="modal-date-text mt-2" id="modalDate"></p>
                                 <hr style="border-color:#eee;" />
-                                <a href="https://calendly.com/sajith-vijesekara/end-to-end-product-design-development-consultation" target="_blank" rel="noopener" class="modal-contact-btn">
+                                <!-- Desktop only: button stays in left column -->
+                                <a href="https://calendly.com/sajith-vijesekara/end-to-end-product-design-development-consultation" target="_blank" rel="noopener" class="modal-contact-btn d-none d-md-flex">
                                     <i class="fas fa-calendar-alt"></i> Let's Build Something Together
                                 </a>
                             </div>
@@ -1092,9 +1104,12 @@ restaurant ordering system.</p>
                                         </div>
                                     </div>
                                 </div>
-                                <p class="modal-img-guide">Recommended screenshot size: 1280&times;800 px (desktop) &nbsp;|&nbsp; 390&times;844 px (mobile)</p>
                             </div>
                         </div>
+                        <!-- Mobile only: button at bottom of modal -->
+                        <a href="https://calendly.com/sajith-vijesekara/end-to-end-product-design-development-consultation" target="_blank" rel="noopener" class="modal-contact-btn d-md-none mt-4">
+                            <i class="fas fa-calendar-alt"></i> Let's Build Something Together
+                        </a>
                     </div>
                 </div>
             </div>
@@ -1155,6 +1170,15 @@ restaurant ordering system.</p>
                     skills: ['React', 'Spring Boot', 'AWS', 'Microservices', 'PostgreSQL'],
                     url: 'https://ftracker-seven.vercel.app',
                     year: '2024',
+                    image: ''
+                },
+                ofleet: {
+                    title: 'OFleet — AI-Powered Fleet Management SaaS',
+                    role: 'Founder & Full-stack Developer',
+                    description: 'OFleet is a B2B SaaS platform that uses AI-driven orchestration to optimise proprietary transportation systems for SMEs. The platform dynamically manages drivers, vehicles, and multi-stop routing through intelligent algorithms — minimising resource waste, automating dispatching and load capacity, and enabling agile, cost-effective delivery operations.',
+                    skills: ['Spring Boot', 'React', 'AI/ML', 'AWS', 'PostgreSQL', 'Microservices'],
+                    url: 'https://ofleet.online',
+                    year: '2025',
                     image: ''
                 },
                 bopo: {
