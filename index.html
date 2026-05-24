@@ -165,6 +165,31 @@
                 position: relative;
                 top: -2px;
             }
+            /* Project icon — top-right corner of each card */
+            .cardv2 { position: relative; }
+            .project-icon-wrap {
+                position: absolute;
+                top: 14px;
+                right: 16px;
+                width: 52px;
+                height: 52px;
+                border-radius: 10px;
+                background: #fff8f5;
+                border: 1.5px solid #f0ddd5;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+            }
+            .project-icon-wrap img {
+                width: 38px;
+                height: 38px;
+                object-fit: contain;
+            }
+            .project-icon-wrap .fa, .project-icon-wrap .fas, .project-icon-wrap .fab {
+                font-size: 22px;
+                color: #BD5D38;
+            }
             /* copy-link toast */
             #copyToast {
                 position: fixed;
@@ -521,8 +546,8 @@ restaurant ordering system.</p>
                         <div class="col-md-3">
                           <a href="https://www.simplehr.io/" class="project-card-link" data-project="simplehr" style="text-decoration: none; color: inherit;">
                           <div class="cardv2 card-empty">
-                            
-                            <span><h3>SimpleHR.io <i class="fas fa-check-circle prod-verified-icon" title="In Production"></i></h3>  <img src="assets/img/saas.png" style="height: 35px" class="mobile"/> </span>
+                            <div class="project-icon-wrap"><img src="assets/img/logos/simplehr-logo-icon.png" alt="SimpleHR"></div>
+                            <span><h3>SimpleHR.io <i class="fas fa-check-circle prod-verified-icon" title="In Production"></i></h3></span>
                              </br>
                             <b style="margin-bottom: 10px;" class="workLabel">Personal</b>
                             </br>
@@ -592,8 +617,8 @@ restaurant ordering system.</p>
                           
                           <a href="https://univox.io" class="project-card-link" data-project="univox" style="text-decoration: none; color: inherit;">
                           <div class="cardv2 card-empty">
-                            
-                           <span><h3>Univox.io</h3>  <img src="assets/img/saas.png" style="height: 35px" class="mobile"/> </span>
+                            <div class="project-icon-wrap"><i class="fas fa-robot"></i></div>
+                            <span><h3>Univox.io</h3></span>
                              </br>
                             <b style="margin-bottom: 10px;" class="workLabel">Personal</b>
                             </br>
@@ -615,10 +640,8 @@ restaurant ordering system.</p>
                          <a href="https://www.sajithv.com/movie-tickets.html" class="project-card-link" data-project="moviebooking" style="text-decoration: none; color: inherit;">
 
                             <div class="cardv2 card-empty">
-                            
-                           
-
-                            <span><h3>Movie Booking Platform <i class="fas fa-check-circle prod-verified-icon" title="In Production"></i></h3>  <img src="assets/img/md.png" style="height: 35px" class="mobile"/> </span>
+                            <div class="project-icon-wrap"><i class="fas fa-film"></i></div>
+                            <span><h3>Movie Booking Platform <i class="fas fa-check-circle prod-verified-icon" title="In Production"></i></h3></span>
                              </br>
                             <b style="margin-bottom: 10px;" class="workLabel">Personal</b>
                             </br>
@@ -639,8 +662,8 @@ restaurant ordering system.</p>
                           
                           <a href="https://www.linkedin.com/company/onehirelk" class="project-card-link" data-project="onehire" style="text-decoration: none; color: inherit;">
                           <div class="cardv2 card-empty">
-                            
-                           <span><h3>OneHire.lk <i class="fas fa-check-circle prod-verified-icon" title="In Production"></i></h3>  <img src="assets/img/saas.png" style="height: 35px" class="mobile"/> </span>
+                            <div class="project-icon-wrap"><i class="fas fa-users"></i></div>
+                            <span><h3>OneHire.lk <i class="fas fa-check-circle prod-verified-icon" title="In Production"></i></h3></span>
                              </br>
                             <b style="margin-bottom: 10px;" class="workLabel">Community</b>
                             </br>
@@ -662,7 +685,8 @@ restaurant ordering system.</p>
                           <a href="https://ftracker-seven.vercel.app" class="project-card-link" data-project="ftracker" style="text-decoration: none; color: inherit;">
                           <div class="cardv2 card-empty">
                             
-                           <span><h3>FTracker</h3>  <img src="assets/img/saas.png" style="height: 35px" class="mobile"/> </span>
+                           <div class="project-icon-wrap"><i class="fas fa-chart-line"></i></div>
+                           <span><h3>FTracker</h3></span>
                              </br>
                             <b style="margin-bottom: 10px;" class="workLabel">Personal</b>
                             </br>
@@ -682,7 +706,8 @@ restaurant ordering system.</p>
                         <div class="col-md-3">
                           <a href="https://ofleet.online" class="project-card-link" data-project="ofleet" style="text-decoration: none; color: inherit;">
                           <div class="cardv2 card-empty">
-                            <span><h3>OFleet</h3>  <img loading="lazy" src="assets/img/saas.png" style="height: 35px" class="mobile"/> </span>
+                            <div class="project-icon-wrap"><img src="assets/img/logos/pfleet-logo-icon.png" alt="OFleet"></div>
+                            <span><h3>OFleet <i class="fas fa-check-circle prod-verified-icon" title="In Production"></i></h3></span>
                             </br>
                             <b style="margin-bottom: 10px;" class="workLabel">Personal</b>
                             </br>
@@ -701,7 +726,8 @@ restaurant ordering system.</p>
                         <div class="col-md-3">
                           <a href="game-for-kids.html" class="project-card-link" data-project="bopo" style="text-decoration: none; color: inherit;">
                           <div class="cardv2 card-empty">
-                            <span><h3>Bopo &amp; Friends</h3>  <img src="assets/img/md.png" style="height: 35px" class="mobile"/> </span>
+                            <div class="project-icon-wrap"><i class="fas fa-gamepad"></i></div>
+                            <span><h3>Bopo &amp; Friends <i class="fas fa-check-circle prod-verified-icon" title="In Production"></i></h3></span>
                             </br>
                             <b style="margin-bottom: 10px;" class="workLabel">Personal</b>
                             </br>
