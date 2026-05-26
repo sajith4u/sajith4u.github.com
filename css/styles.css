@@ -11049,6 +11049,11 @@ p.lead {
 
 .dev-icons {
   font-size: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding-left: 0;
+  list-style: none;
 }
 
 section.resume-section {
@@ -11075,12 +11080,6 @@ section.resume-section .resume-section-content {
 @media (min-width: 768px) {
   section.resume-section {
     min-height: 100vh;
-  }
-
-  .tech-icon {
-    width: 32px;
-    height: 32px;
-    filter: sepia(100%) saturate(700%) hue-rotate(340deg);
   }
 }
 
@@ -11371,8 +11370,22 @@ body {
 }
 
 .tech-icon {
-  width: 36px;
-  height: 36px;
+  width: 28px;
+  height: 28px;
   filter: sepia(100%) saturate(700%) hue-rotate(340deg);
+}
+
+@media (min-width: 576px) {
+  .tech-icon {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (min-width: 992px) {
+  .tech-icon {
+    width: 40px;
+    height: 40px;
+  }
 }
 
