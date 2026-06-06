@@ -361,6 +361,196 @@
                 .mvp-cta-card { padding: 2rem 1.5rem; }
                 .mvp-cta-title { font-size: 1.7rem; }
             }
+            /* Experience timeline */
+            .exp-timeline { position: relative; padding-left: 2.6rem; }
+            .exp-timeline::before {
+                content: '';
+                position: absolute;
+                left: 7px;
+                top: 14px;
+                bottom: 8px;
+                width: 2px;
+                background: linear-gradient(to bottom, #BD5D38 0%, rgba(189,93,56,0.15) 100%);
+            }
+            .tl-item { position: relative; margin-bottom: 1.5rem; }
+            .tl-item:last-child { margin-bottom: 0; }
+            .tl-dot {
+                position: absolute;
+                left: -2.6rem;
+                top: 13px;
+                width: 16px;
+                height: 16px;
+                border-radius: 50%;
+                background: #BD5D38;
+                border: 3px solid #fff;
+                box-shadow: 0 0 0 2px #BD5D38;
+                z-index: 1;
+            }
+            .tl-dot.active {
+                animation: tl-pulse 2.2s infinite;
+            }
+            @keyframes tl-pulse {
+                0%   { box-shadow: 0 0 0 2px #BD5D38, 0 0 0 5px rgba(189,93,56,0.35); }
+                50%  { box-shadow: 0 0 0 2px #BD5D38, 0 0 0 10px rgba(189,93,56,0); }
+                100% { box-shadow: 0 0 0 2px #BD5D38, 0 0 0 5px rgba(189,93,56,0.35); }
+            }
+            .tl-card {
+                background: #fff;
+                border: 1.5px solid #ececec;
+                border-radius: 12px;
+                padding: 1.15rem 1.4rem 1rem;
+                transition: box-shadow 0.18s, border-color 0.18s;
+            }
+            .tl-card:hover {
+                box-shadow: 0 4px 22px rgba(189,93,56,0.09);
+                border-color: #f0c4ae;
+            }
+            .tl-header {
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                gap: 1rem;
+                margin-bottom: 0.3rem;
+            }
+            .tl-role {
+                font-size: 1rem;
+                font-weight: 700;
+                color: #1a1a1a;
+                line-height: 1.3;
+                margin: 0;
+            }
+            .tl-date {
+                font-size: 0.72rem;
+                font-weight: 600;
+                color: #BD5D38;
+                background: #fff3ee;
+                border: 1px solid #f5ddd5;
+                border-radius: 20px;
+                padding: 3px 11px;
+                white-space: nowrap;
+                flex-shrink: 0;
+                margin-top: 2px;
+            }
+            .tl-company {
+                display: flex;
+                align-items: center;
+                gap: 7px;
+                margin-bottom: 0.7rem;
+            }
+            .tl-company img {
+                width: 20px;
+                height: 20px;
+                border-radius: 4px;
+                object-fit: contain;
+                border: 1px solid #eee;
+                background: #fafafa;
+            }
+            .tl-company-name {
+                font-size: 0.83rem;
+                font-weight: 600;
+                color: #777;
+                letter-spacing: 0.01em;
+            }
+            .tl-desc {
+                font-size: 0.83rem;
+                color: #555;
+                line-height: 1.65;
+                margin-bottom: 0.75rem;
+                padding-left: 0;
+                list-style: none;
+            }
+            .tl-desc li { position: relative; padding-left: 1rem; margin-bottom: 0.2rem; }
+            .tl-desc li::before {
+                content: '›';
+                position: absolute;
+                left: 0;
+                color: #BD5D38;
+                font-weight: 700;
+            }
+            .tl-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+            .tl-tag {
+                background: #f5f5f5;
+                color: #555;
+                border-radius: 20px;
+                padding: 2px 10px;
+                font-size: 0.7rem;
+                font-weight: 500;
+            }
+            /* Experience stats banner */
+            .exp-stats {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                background: #fafafa;
+                border: 1.5px solid #ececec;
+                border-radius: 14px;
+                padding: 1.1rem 1.6rem;
+                margin-bottom: 2rem;
+                gap: 0;
+            }
+            .exp-stat {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 0.2rem 1.6rem;
+                text-align: center;
+            }
+            .exp-stat:first-child { padding-left: 0; }
+            .exp-stat-num {
+                font-family: 'Saira Extra Condensed', sans-serif;
+                font-size: 2rem;
+                font-weight: 700;
+                color: #BD5D38;
+                line-height: 1;
+                margin-bottom: 0.15rem;
+            }
+            .exp-stat-label {
+                font-size: 0.7rem;
+                color: #888;
+                font-weight: 600;
+                letter-spacing: 0.02em;
+                white-space: nowrap;
+            }
+            .exp-stat-divider {
+                width: 1px;
+                height: 38px;
+                background: #e4e4e4;
+                flex-shrink: 0;
+            }
+            .exp-industries {
+                padding: 0.2rem 0 0.2rem 1.6rem;
+                display: flex;
+                flex-direction: column;
+            }
+            .exp-industries-eyebrow {
+                font-size: 0.68rem;
+                font-weight: 600;
+                color: #bbb;
+                letter-spacing: 0.08em;
+                text-transform: uppercase;
+                margin-bottom: 0.3rem;
+            }
+            .exp-industries-tags {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 5px;
+            }
+            .exp-industries-tags span {
+                font-size: 0.7rem;
+                font-weight: 500;
+                color: #BD5D38;
+                background: #fff3ee;
+                border: 1px solid #f5ddd5;
+                border-radius: 20px;
+                padding: 2px 10px;
+            }
+            @media (max-width: 767px) {
+                .exp-stats { gap: 0.75rem; padding: 1rem; }
+                .exp-stat { padding: 0.2rem 1rem; }
+                .exp-stat:first-child { padding-left: 1rem; }
+                .exp-stat-divider { display: none; }
+                .exp-industries { padding-left: 1rem; }
+            }
             /* Expert area cards */
             .expert-card {
                 background: #fff;
@@ -514,114 +704,220 @@ I bring a strong understanding of <b>software engineering best practices </b>, <
             <!-- Experience-->
             <section class="resume-section" id="experience">
                 <div class="resume-section-content">
-                    <h2 class="mb-5">Experience</h2>
+                    <h2 class="mb-3">Experience</h2>
+                    <div class="exp-stats">
+                        <div class="exp-stat">
+                            <span class="exp-stat-num">10+</span>
+                            <span class="exp-stat-label">Years Experience</span>
+                        </div>
+                        <div class="exp-stat-divider"></div>
+                        <div class="exp-stat">
+                            <span class="exp-stat-num">4+</span>
+                            <span class="exp-stat-label">Years Leading Teams</span>
+                        </div>
+                        
+                        <div class="exp-stat-divider"></div>
+                        <div class="exp-stat">
+                            <span class="exp-stat-num">8+</span>
+                            <span class="exp-stat-label">Enterprise Projects</span>
+                        </div>
+                        <div class="exp-stat-divider"></div>
+                        <div class="exp-industries">
+                            <span class="exp-industries-eyebrow">Industries</span>
+                            <div class="exp-industries-tags">
+                                <span>Telecom</span>
+                                <span>FinTech</span>
+                                <span>E-commerce</span>
+                                <span>Healthcare</span>
+                                <span>Hospitality</span>
+                                <span>Real Estate</span>
+                            </div>
+                        </div>
+                    </div>
 
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Technical Lead</h3>
-                            <div class="subheading mb-3">
-                              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXvJgusc3q-rczhrVis6S9LezPgl-mO9WSow&s" alt="Sysco Labs Logo" class="company-icon">
-                              Sysco Labs</div>
-                            <p style="font-size: 18px;">
-                                Designing an Enterprise Invoice Management System, ensuring scalability and efficiency<br> 
-                                Engaging with customers to gather and refine requirements<br> 
-                                Conducting code reviews to maintain code quality and best practices<br> 
-                                Designing new integrations to enhance system capabilities<br> 
-                                Leading a development pod of 7–8 developers, providing technical guidance and mentorship.
-                            </p>
-                            <div style="display:flex; border-top: 0px; align-self: flex-end;">
-                                 <h5 class="expLabel" style=" display: inline-block; margin-left: 3px;">Java</h5>
-                                 <h5 class="expLabel" style=" display: inline-block; margin-left: 3px;">Spring</h5>
-                                 <h5 class="expLabel" style=" display: inline-block; margin-left: 3px;">Postgresql</h5>
-                                 <h5 class="expLabel" style=" display: inline-block; margin-left: 3px;">AWS</h5>
-                            </div>
-                            
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">Mar 2024 - Present</span></div>
-                    </div>
+                    <div class="exp-timeline">
 
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Technical Lead</h3>
-                            <div class="subheading mb-3">
-                              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZeoVpvJnCE6AmdvRN174ALb9-1MU5fkh1OA&s" alt="Estabild Logo" class="company-icon">
-                              Estabild</div>
-                            <p style="font-size: 18px;">Lead Backend Developer <br> 
-                                Design And Developed World leading Real estate development software
-                            </p>
-                            <div style="display:flex; border-top: 0px; align-self: flex-end;">
-                                 <h5 class="expLabel" style=" display: inline-block; margin-left: 3px;">ReactJs</h5>
-                                 <h5 class="expLabel" style=" display: inline-block; margin-left: 3px;">Spring</h5>
-                                 <h5 class="expLabel" style=" display: inline-block; margin-left: 3px;">AWS</h5>
+                        <!-- Sysco Labs -->
+                        <div class="tl-item">
+                            <div class="tl-dot active"></div>
+                            <div class="tl-card">
+                                <div class="tl-header">
+                                    <p class="tl-role">Technical Lead</p>
+                                    <span class="tl-date">Mar 2024 — Present</span>
+                                </div>
+                                <div class="tl-company">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXvJgusc3q-rczhrVis6S9LezPgl-mO9WSow&s" alt="Sysco Labs">
+                                    <span class="tl-company-name">Sysco Labs</span>
+                                </div>
+                                <ul class="tl-desc">
+                                    <li>Architecting an Enterprise Invoice Management System for scalability and operational efficiency</li>
+                                    <li>Engaging with stakeholders to gather, refine, and translate requirements into technical deliverables</li>
+                                    <li>Leading and mentoring a development pod of 7–8 engineers, driving code quality and best practices</li>
+                                    <li>Designing new system integrations to extend platform capabilities</li>
+                                </ul>
+                                <div class="tl-tags">
+                                    <span class="tl-tag">Java</span>
+                                    <span class="tl-tag">Spring Boot</span>
+                                    <span class="tl-tag">PostgreSQL</span>
+                                    <span class="tl-tag">AWS</span>
+                                    <span class="tl-tag">Microservices</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="flex-shrink-0"><span class="text-primary">Jul 2022 - Mar 2024</span></div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Technical Lead</h3>
-                            <div class="subheading mb-3">
-                              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTMaEoTmvrtRzpCvU0caeNrg8cfmWKERX5Kw&s" alt="Estabild Logo" class="company-icon">
-                              Arimac</div>
-                            <p style="font-size: 18px;">Leading Telco Products<br> 
-                                Collaborating with product line management to identify , refine and translate customer needs into concrete technical requirements
-                                <br> Leading architectural tasks and design for telco products
-                            </p>
-                            <div style="display:flex; border-top: 0px; align-self: flex-end;">
-                                 <h5 class="expLabel" style=" display: inline-block; margin-left: 3px;">Java</h5>
-                                 <h5 class="expLabel" style=" display: inline-block; margin-left: 3px;">Webflux</h5>
-                                 <h5 class="expLabel" style=" display: inline-block; margin-left: 3px;">MongoDb</h5>
+
+                        <!-- Estabild -->
+                        <div class="tl-item">
+                            <div class="tl-dot"></div>
+                            <div class="tl-card">
+                                <div class="tl-header">
+                                    <p class="tl-role">Technical Lead</p>
+                                    <span class="tl-date">Jul 2022 — Mar 2024</span>
+                                </div>
+                                <div class="tl-company">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZeoVpvJnCE6AmdvRN174ALb9-1MU5fkh1OA&s" alt="Estabild">
+                                    <span class="tl-company-name">Estabild</span>
+                                </div>
+                                <ul class="tl-desc">
+                                    <li>Served as Lead Backend Developer for a world-class real estate development finance platform</li>
+                                    <li>Designed and built cloud-native backend services supporting complex construction finance workflows</li>
+                                    <li>Drove architectural decisions to ensure system reliability, performance, and compliance</li>
+                                </ul>
+                                <div class="tl-tags">
+                                    <span class="tl-tag">React.js</span>
+                                    <span class="tl-tag">Spring Boot</span>
+                                    <span class="tl-tag">AWS</span>
+                                    <span class="tl-tag">PostgreSQL</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="flex-shrink-0"><span class="text-primary">Jul 2021 - Jul 2022</span></div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">
-                              Senior Software Engineer</h3>
-                            <div class="subheading mb-3">
-                              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTMaEoTmvrtRzpCvU0caeNrg8cfmWKERX5Kw&s" alt="Estabild Logo" class="company-icon">
-                              Arimac</div>
-                            <p style="font-size: 18px;">Managed the telco Development team <br> 
-                                Play lead developer role for design & developing contact tracing solution for covid-19’s patients.
-                                <br> Performed requirement analysis, design & development of Telco Selfcare solution</p>
+
+                        <!-- Arimac — TL -->
+                        <div class="tl-item">
+                            <div class="tl-dot"></div>
+                            <div class="tl-card">
+                                <div class="tl-header">
+                                    <p class="tl-role">Technical Lead</p>
+                                    <span class="tl-date">Jul 2021 — Jul 2022</span>
+                                </div>
+                                <div class="tl-company">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTMaEoTmvrtRzpCvU0caeNrg8cfmWKERX5Kw&s" alt="Arimac">
+                                    <span class="tl-company-name">Arimac</span>
+                                </div>
+                                <ul class="tl-desc">
+                                    <li>Led architecture and delivery of multiple Telco products for enterprise clients</li>
+                                    <li>Collaborated with product management to translate customer needs into precise technical requirements</li>
+                                    <li>Directed architectural design decisions across the full telco product portfolio</li>
+                                </ul>
+                                <div class="tl-tags">
+                                    <span class="tl-tag">Java</span>
+                                    <span class="tl-tag">Spring Webflux</span>
+                                    <span class="tl-tag">MongoDB</span>
+                                    <span class="tl-tag">Reactive</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="flex-shrink-0"><span class="text-primary">Apr 2020 - Jul 2021</span></div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Senior Software Engineer</h3>
-                            <div class="subheading mb-3">
-                              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRDyPvywg0ffKZzXRxgc7kzqzNOOeebZ1vZA&s" alt="Estabild Logo" class="company-icon">
-                              Applova Inc</div>
-                            <p style="font-size: 18px;">Design & developed POS system for restaurant base automation ordering platform.
-                    <br>Design & architecture pos system to cater performance requirements.
-                    <br>Streamline project development work flows with junior developers.</p>
+
+                        <!-- Arimac — SSE -->
+                        <div class="tl-item">
+                            <div class="tl-dot"></div>
+                            <div class="tl-card">
+                                <div class="tl-header">
+                                    <p class="tl-role">Senior Software Engineer</p>
+                                    <span class="tl-date">Apr 2020 — Jul 2021</span>
+                                </div>
+                                <div class="tl-company">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTMaEoTmvrtRzpCvU0caeNrg8cfmWKERX5Kw&s" alt="Arimac">
+                                    <span class="tl-company-name">Arimac</span>
+                                </div>
+                                <ul class="tl-desc">
+                                    <li>Managed the telco development team as the lead engineer on day-to-day delivery</li>
+                                    <li>Led design and development of a national COVID-19 contact tracing solution</li>
+                                    <li>Performed full-cycle requirement analysis, design, and development of a Telco Self-Care platform</li>
+                                </ul>
+                                <div class="tl-tags">
+                                    <span class="tl-tag">Java</span>
+                                    <span class="tl-tag">Spring Boot</span>
+                                    <span class="tl-tag">Telco</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="flex-shrink-0"><span class="text-primary">Apr 2019 - Apr 2020</span></div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Software Engineer</h3>
-                            <div class="subheading mb-3">
-                              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRDyPvywg0ffKZzXRxgc7kzqzNOOeebZ1vZA&s" alt="Estabild Logo" class="company-icon">
-                              Applova Inc</div>
-                            <p style="font-size: 18px;">Responsible of development process of telco analytical platform.
-<br> Act as Mobile Development Role for POS application for
-restaurant ordering system.</p>
+
+                        <!-- Applova — SSE -->
+                        <div class="tl-item">
+                            <div class="tl-dot"></div>
+                            <div class="tl-card">
+                                <div class="tl-header">
+                                    <p class="tl-role">Senior Software Engineer</p>
+                                    <span class="tl-date">Apr 2019 — Apr 2020</span>
+                                </div>
+                                <div class="tl-company">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRDyPvywg0ffKZzXRxgc7kzqzNOOeebZ1vZA&s" alt="Applova">
+                                    <span class="tl-company-name">Applova Inc</span>
+                                </div>
+                                <ul class="tl-desc">
+                                    <li>Designed and developed a high-performance POS system for a restaurant automation ordering platform</li>
+                                    <li>Architected the POS system to meet demanding performance and reliability requirements</li>
+                                    <li>Streamlined development workflows and mentored junior engineers</li>
+                                </ul>
+                                <div class="tl-tags">
+                                    <span class="tl-tag">Java</span>
+                                    <span class="tl-tag">Spring Boot</span>
+                                    <span class="tl-tag">Restaurant Tech</span>
+                                    <span class="tl-tag">POS</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="flex-shrink-0"><span class="text-primary">Apr 2017 - Apr 2019</span></div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Software Engineer</h3>
-                            <div class="subheading mb-3">
-                              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMQqDDNyQHUTEkY7fYa3nyfMdqsBJoUvI2cA&s" alt="Estabild Logo" class="company-icon">
-                              hsenid Mobile Solutions</div>
-                            <p style="font-size: 18px;">Responsible of development process of a Mobile Money Platform for Telco Domain.
-<br>Worked as Web & Mobile Developer</p>
+
+                        <!-- Applova — SE -->
+                        <div class="tl-item">
+                            <div class="tl-dot"></div>
+                            <div class="tl-card">
+                                <div class="tl-header">
+                                    <p class="tl-role">Software Engineer</p>
+                                    <span class="tl-date">Apr 2017 — Apr 2019</span>
+                                </div>
+                                <div class="tl-company">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRDyPvywg0ffKZzXRxgc7kzqzNOOeebZ1vZA&s" alt="Applova">
+                                    <span class="tl-company-name">Applova Inc</span>
+                                </div>
+                                <ul class="tl-desc">
+                                    <li>Developed a telco analytical platform handling real-time data processing and reporting</li>
+                                    <li>Contributed mobile development for the POS restaurant ordering application</li>
+                                </ul>
+                                <div class="tl-tags">
+                                    <span class="tl-tag">Java</span>
+                                    <span class="tl-tag">Mobile</span>
+                                    <span class="tl-tag">Analytics</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="flex-shrink-0"><span class="text-primary">Jan 2015 - Apr 2017</span></div>
+
+                        <!-- hsenid -->
+                        <div class="tl-item">
+                            <div class="tl-dot"></div>
+                            <div class="tl-card">
+                                <div class="tl-header">
+                                    <p class="tl-role">Software Engineer</p>
+                                    <span class="tl-date">Jan 2015 — Apr 2017</span>
+                                </div>
+                                <div class="tl-company">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMQqDDNyQHUTEkY7fYa3nyfMdqsBJoUvI2cA&s" alt="hsenid Mobile Solutions">
+                                    <span class="tl-company-name">hsenid Mobile Solutions</span>
+                                </div>
+                                <ul class="tl-desc">
+                                    <li>Built a Mobile Money Platform for the Telco domain, supporting financial transactions at scale</li>
+                                    <li>Worked across web and mobile development to deliver end-to-end product features</li>
+                                </ul>
+                                <div class="tl-tags">
+                                    <span class="tl-tag">Java</span>
+                                    <span class="tl-tag">Web</span>
+                                    <span class="tl-tag">Mobile</span>
+                                    <span class="tl-tag">FinTech</span>
+                                    <span class="tl-tag">Telco</span>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </section>
