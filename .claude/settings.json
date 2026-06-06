@@ -20,7 +20,9 @@
       "Bash(curl -s \"https://icon.icepanel.io/AWS/svg/\" -o /dev/null -w \"%{http_code}\\\\n\")",
       "Bash(curl -s -L -o /dev/null -w \"%{http_code}\" \"https://raw.githubusercontent.com/aws-samples/aws-icons-for-plantuml/main/dist/MachineLearning/Bedrock.svg\")",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://cdn.simpleicons.org/amazonsagemaker\")",
-      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://cdn.simpleicons.org/amazonaws\")"
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://cdn.simpleicons.org/amazonaws\")",
+      "Bash(sed -n '396,406p' /home/sajith/projects/personal/my_git_site/sajith4u.github.com/css/styles.css)",
+      "Bash(sed -n '10948,10965p' /home/sajith/projects/personal/my_git_site/sajith4u.github.com/css/styles.css)"
     ]
   }
 }

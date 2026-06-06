@@ -476,6 +476,42 @@
                 font-size: 0.7rem;
                 font-weight: 500;
             }
+            /* Mobile profile image beside name */
+            .about-name-row { display: block; }
+            .about-mobile-avatar { display: none; }
+            @media (max-width: 991px) {
+                #about.resume-section {
+                    padding-top: 1.75rem;
+                    padding-bottom: 2.5rem;
+                }
+                .about-name-row {
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 0.85rem;
+                    margin-bottom: 0.5rem;
+                }
+                .about-name-row h1 {
+                    flex: 1;
+                    min-width: 0;
+                    margin-bottom: 0 !important;
+                    font-size: 3.5rem;
+                    line-height: 1;
+                }
+                .about-mobile-avatar {
+                    display: block;
+                    flex-shrink: 0;
+                    width: 7rem;
+                    height: 7rem;
+                    object-fit: cover;
+                    object-position: center top;
+                    border-radius: 10px;
+                    border: 2px solid #f0ddd5;
+                }
+            }
+            @media (max-width: 360px) {
+                .about-name-row h1 { font-size: 3rem; }
+                .about-mobile-avatar { width: 6rem; height: 6rem; }
+            }
             /* Experience stats banner */
             .exp-stats {
                 display: flex;
@@ -648,22 +684,23 @@
             <!-- About-->
             <section class="resume-section" id="about">
                 <div class="resume-section-content">
-                    <h1 class="mb-0">
-                        Sajith
-                        <span class="text-primary">Vijesekara</span>
-                    </h1>
+                    <div class="about-name-row">
+                        <img src="assets/img/gpt4.jpeg" alt="Sajith Vijesekara" class="about-mobile-avatar">
+                        <h1 class="mb-0">
+                            Sajith
+                            <span class="text-primary">Vijesekara</span>
+                        </h1>
+                    </div>
                     <div class="subheading mb-0">
                         Colombo, Sri Lanka · (94) 766628369 ·
                         <a href="mailto:sajith.vijesekara@gmail.com">sajith.vijesekara@gmail.com</a>
-                        
                     </div>
-                    <div class="subheading mb-5">
-
+                    <div class="subheading mb-3">
                         <a href="https://aws.amazon.com/developer/community/community-builders/community-builders-directory/?cb-cards.sort-by=item.additionalFields.cbName&cb-cards.sort-order=asc&awsf.builder-category=*all&awsf.location=*all&awsf.year=*all&cb-cards.q=sajith&cb-cards.q_operator=AND" target="_blank">AWS Community Builder</a>
                         &nbsp; &nbsp;
                         <a href="https://www.credly.com/badges/c566398a-6d8c-4515-8631-b06a880dd3f8/public_url" target="_blank">CKAD</a>
                     </div>
-                    <p class="lead mb-5" style="font-size: 18px; margin-top: -25px;">
+                    <p class="lead mb-5" style="font-size: 18px;">
 
                       I’m  a <b>Seasoned Software Technical Lead </b> with over <b>10+ years of experience </b>in backend development and software architecture, including the <b>last 4 years leading engineering teams </b> and delivering high-impact solutions for enterprise clients. </br></br>
 
