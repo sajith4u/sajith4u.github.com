@@ -361,6 +361,46 @@
                 .mvp-cta-card { padding: 2rem 1.5rem; }
                 .mvp-cta-title { font-size: 1.7rem; }
             }
+            /* Expert area cards */
+            .expert-card {
+                background: #fff;
+                border: 1.5px solid #ececec;
+                border-radius: 14px;
+                padding: 1.5rem 1.4rem 1.3rem;
+                height: 100%;
+                transition: box-shadow 0.18s, border-color 0.18s, transform 0.18s;
+            }
+            .expert-card:hover {
+                box-shadow: 0 6px 28px rgba(189,93,56,0.10);
+                border-color: #f0c4ae;
+                transform: translateY(-3px);
+            }
+            .expert-icon {
+                width: 48px;
+                height: 48px;
+                border-radius: 12px;
+                background: #fff3ee;
+                border: 1.5px solid #f5ddd5;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 1rem;
+                flex-shrink: 0;
+            }
+            .expert-icon i { font-size: 20px; color: #BD5D38; }
+            .expert-title {
+                font-size: 0.95rem;
+                font-weight: 700;
+                color: #1a1a1a;
+                margin-bottom: 0.45rem;
+                line-height: 1.3;
+            }
+            .expert-desc {
+                font-size: 0.82rem;
+                color: #666;
+                line-height: 1.65;
+                margin: 0;
+            }
             /* copy-link toast */
             #copyToast {
                 position: fixed;
@@ -677,43 +717,49 @@ restaurant ordering system.</p>
 
                     </ul>
                     <div class="subheading mb-3" style="font-size: 40px;">Expert Areas</div>
-                    <ul class="fa-ul mb-0" style="font-size: 20px; line-height: 1.6;">
-                      <li>
-                        <span class="fa-li">
-                          <i class="fas fa-project-diagram" style="color: #BD5D38;"></i>
-                        </span>
-                        <strong>Enterprise Architecture</strong><br />
-                        Translating complex business requirements into distributed, event-driven systems with high throughput and long-term scalability across telecom, e-commerce, healthcare, and finance. Specialised in domain-driven design and decentralized architecture patterns that keep large systems maintainable as they grow.
-                      </li>
-                      <li>
-                        <span class="fa-li">
-                          <i class="fas fa-cogs" style="color: #BD5D38;"></i>
-                        </span>
-                        <strong>Microservices &amp; API Engineering</strong><br />
-                        Designing contract-first, loosely coupled microservices that enable independent scaling, high availability, and fault isolation in production environments. Deep expertise in building decentralized service meshes and API ecosystems that handle millions of requests without degradation.
-                      </li>
-                      <li>
-                        <span class="fa-li">
-                          <i class="fab fa-aws" style="color: #BD5D38;"></i>
-                        </span>
-                        <strong>Cloud-Native Development</strong><br />
-                        AWS Community Builder and CKAD-certified, with hands-on experience architecting high-throughput, resilient cloud workloads using Kubernetes, Terraform, and serverless on AWS and Azure. Focused on engineering infrastructure that is observable, cost-efficient, and capable of scaling under real production load.
-                      </li>
-                      <li>
-                        <span class="fa-li">
-                          <i class="fas fa-robot" style="color: #BD5D38;"></i>
-                        </span>
-                        <strong>AI-Driven Engineering</strong><br />
-                        Designing and shipping production-grade AI systems — from LLM-powered workflows and autonomous agents to intelligent data pipelines — that turn business logic into measurable outcomes. Focused on embedding AI at the architecture level, not as a layer on top, to build systems that are scalable, explainable, and operationally sound.
-                      </li>
-                      <li>
-                        <span class="fa-li">
-                          <i class="fas fa-users-cog" style="color: #BD5D38;"></i>
-                        </span>
-                        <strong>Engineering Leadership</strong><br />
-                        Leading cross-functional teams as an AI-focused engineering manager who bridges strategic business objectives and technical execution — from architecture decisions through to delivery. Proven in transforming ambiguous product requirements into precise engineering roadmaps, team standards, and high-throughput delivery pipelines.
-                      </li>
-                    </ul>
+                    <div class="row">
+
+                        <div class="col-md-4 col-sm-6 mb-3">
+                            <div class="expert-card">
+                                <div class="expert-icon"><i class="fas fa-project-diagram"></i></div>
+                                <div class="expert-title">Enterprise Architecture</div>
+                                <p class="expert-desc">Translating complex business requirements into distributed, event-driven systems with high throughput and long-term scalability across telecom, e-commerce, healthcare, and finance. Specialised in domain-driven design and decentralized architecture patterns that keep large systems maintainable as they grow.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 mb-3">
+                            <div class="expert-card">
+                                <div class="expert-icon"><i class="fas fa-cogs"></i></div>
+                                <div class="expert-title">Microservices &amp; API Engineering</div>
+                                <p class="expert-desc">Designing contract-first, loosely coupled microservices that enable independent scaling, high availability, and fault isolation in production environments. Deep expertise in building decentralized service meshes and API ecosystems that handle millions of requests without degradation.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 mb-3">
+                            <div class="expert-card">
+                                <div class="expert-icon"><i class="fab fa-aws"></i></div>
+                                <div class="expert-title">Cloud-Native Development</div>
+                                <p class="expert-desc">AWS Community Builder and CKAD-certified, with hands-on experience architecting high-throughput, resilient cloud workloads using Kubernetes, Terraform, and serverless on AWS and Azure. Focused on engineering infrastructure that is observable, cost-efficient, and capable of scaling under real production load.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 mb-3">
+                            <div class="expert-card">
+                                <div class="expert-icon"><i class="fas fa-robot"></i></div>
+                                <div class="expert-title">AI-Driven Engineering</div>
+                                <p class="expert-desc">Designing and shipping production-grade AI systems — from LLM-powered workflows and autonomous agents to intelligent data pipelines — that turn business logic into measurable outcomes. Focused on embedding AI at the architecture level, not as a layer on top, to build systems that are scalable, explainable, and operationally sound.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 mb-3">
+                            <div class="expert-card">
+                                <div class="expert-icon"><i class="fas fa-users-cog"></i></div>
+                                <div class="expert-title">Engineering Leadership</div>
+                                <p class="expert-desc">Leading cross-functional teams as an AI-focused engineering manager who bridges strategic business objectives and technical execution — from architecture decisions through to delivery. Proven in transforming ambiguous product requirements into precise engineering roadmaps, team standards, and high-throughput delivery pipelines.</p>
+                            </div>
+                        </div>
+
+                    </div>
                     
                     
                     
