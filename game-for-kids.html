@@ -171,6 +171,30 @@
             .lp-hero-phone-primary { transform: translateX(16px); }
             .lp-hero-phone-secondary { width: 92%; opacity: 0.82; transform: translateX(-16px); }
 
+            /* ─── INTRO VIDEO ─── */
+            .lp-video {
+                padding: 6rem 4rem;
+                background: #f5f3f0;
+                text-align: center;
+            }
+            .lp-video-frame {
+                max-width: 960px;
+                margin: 0 auto;
+                border-radius: 20px;
+                overflow: hidden;
+                background: #000;
+                aspect-ratio: 16 / 9;
+                box-shadow:
+                    0 40px 80px rgba(0,0,0,0.22),
+                    0 12px 28px rgba(0,0,0,0.12);
+            }
+            .lp-video-frame video {
+                width: 100%;
+                height: 100%;
+                display: block;
+                object-fit: cover;
+            }
+
             /* ─── FEATURE SECTIONS ─── */
             .lp-feature {
                 padding: 7rem 4rem;
@@ -318,7 +342,8 @@
                 .lp-hero h1 { font-size: 2rem; }
                 .lp-hero-phone-secondary { display: none; }
                 .lp-hero-phone-primary { transform: none; }
-                .lp-feature, .lp-gallery, .lp-cta { padding: 4rem 2rem; }
+                .lp-feature, .lp-gallery, .lp-cta, .lp-video { padding: 4rem 2rem; }
+                .lp-video-frame { border-radius: 12px; }
                 .lp-feature-title { font-size: 1.7rem; }
                 .lp-cta h2 { font-size: 1.9rem; }
                 .lp-gallery-grid { grid-template-columns: 1fr; }
@@ -348,6 +373,21 @@
         </nav>
 
         <div class="container-fluid p-0">
+
+            <!-- ══ INTRO VIDEO ══ -->
+            <section class="lp-video">
+                <div class="lp-anim">
+                    <p class="lp-gallery-sub mb-1" style="color:#BD5D38; font-weight:700; font-size:0.75rem; text-transform:uppercase; letter-spacing:1.2px;">Watch the Intro</p>
+                    <h2 class="lp-gallery-title">Meet Bopo &amp; Friends</h2>
+                    <p class="lp-gallery-sub">A quick look at how kids learn through play.</p>
+                </div>
+                <div class="lp-video-frame lp-anim-up d1">
+                    <video controls playsinline preload="none" poster="assets/img/kids-app/intro-poster.jpg">
+                        <source src="assets/img/kids-app/intro-video-720p.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </section>
 
             <!-- ══ HERO ══ -->
             <section class="lp-hero" id="about">
